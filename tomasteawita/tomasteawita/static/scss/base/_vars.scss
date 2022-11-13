@@ -1,0 +1,31 @@
+
+$fondo-cartas : #0b0217be;
+$fondo:#0B0217;
+$fondo-offcanvas:#1E0B38;
+$colores:#9D86DF,#7563AA;
+$parrafos:#F1E7FF;
+$h2:#C2B8D0;
+$fondo-botones:#3A2C5E;
+$borde-botones:#F1E7FF;
+$fondo-cartas:#21182D;
+$fondo-inputs:#130A1F;
+$font-boton:Helvetica;
+$font-texto:'Roboto','Quicksand',sans-serif;
+$font-H:'Roboto Flex', sans-serif;
+
+
+
+
+$f-tiny:1rem;
+$f-small:1.6rem;
+$f-regular:2rem;
+$f-big:2.5rem;
+$f-bold:3rem;
+
+@media only screen and (max-width:600px){
+    $f-tiny:1rem - .4;
+    $f-small:1.6rem - .4;
+    $f-regular:2rem - .4;
+    $f-big:2.5rem - .6;
+    $f-bold:3rem - .6;
+}

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,700&display=swap');
+@import "base/vars";
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    background-color: lighten($fondo, 5%) ;
+}
+main{
+    background-color: #e6e6e6;
+}
+a{
+    text-decoration: none
+}
+p,label{
+    color: $parrafos;
+    font-family: $font-texto;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: $font-boton;
+}
+h1{
+    color: nth($colores, 1 )
+}
+ul{
+    list-style-type: none;
+}
+hr{
+    background-color: $parrafos
+}
+@import "main/loader";
+// @import "main/consulta";
+@import "main/header";
+@import "main/index";
+// @import "main/projects";
+// @import "main/aside";
+@import "main/footer";
+@import "main/cards";

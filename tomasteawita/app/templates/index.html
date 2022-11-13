@@ -1,0 +1,301 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}{% endblock  %}
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script defer src="{% static 'js/main.js' %}"></script>
+{% endblock  %}
+{% block main %}
+    <main class="index">
+        <div class="loader-page">
+            <img src="{% static 'sources/logos/LogoMain.svg' %}" alt="CuevaTomasArg">
+        </div>
+        <section class="presentation">
+            <div>
+                <img src="{% static 'sources/images/fondoPython.jpg'%}" alt="">
+              </div>
+              <div>
+                <h1>Tomasteawita_Code</h1>
+                <p>Codiemos menos y cobremos más ;)</p>
+              </div>
+        </section>
+        <section class="section-more-views">
+            <div class="more-views">
+                <button class="slide-arrow" id="slide-arrow-prev">
+                    &#8249;
+                  </button>
+                   
+                  <button class="slide-arrow" id="slide-arrow-next">
+                    &#8250;
+                  </button>
+                   
+                  <ul class="slides-container" id="slides-container">
+                    <article class="Tcard Tcard-carousel">
+                      <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                      <div>
+                          <strong>Title</strong>
+                          <p>
+                              Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                              adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                              archit
+                          </p>
+                          <p>
+                              <span>By: </span><a href="">Link de la persona</a>
+                          </p>
+                      </div>
+                      <button>
+                          Leer articulo
+                      </button>
+                  </article>
+                  <article class="Tcard Tcard-carousel">
+                      <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                      <div>
+                          <strong>Title</strong>
+                          <p>
+                              Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                              adipis
+                          </p>
+                          <p>
+                              <span>By: </span><a href="">Link de la persona</a>
+                          </p>
+                      </div>
+                      <button>
+                          Leer articulo
+                      </button>
+                  </article>
+                  <article class="Tcard Tcard-carousel">
+                      <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                      <div>
+                          <strong>Title</strong>
+                          <p>
+                              Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                              adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                              architecto unde inventore amet reprehenderit? Odio placeat 
+                              quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                               voluptatem?
+                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dicta rem autem ut, vitae illo nam obcaecati excepturi deleniti a vel, eligendi fugiat, quod ipsam animi repellendus quas dolorum. Inventore.
+                          </p>
+                          <p>
+                              <span>By: </span><a href="">Link de la persona</a>
+                          </p>
+                      </div>
+                      <button>
+                          Leer articulo
+                      </button>
+                  </article>
+                  </ul>
+            </div>
+          </section>
+        <section class="view-post">
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et aspernatur obcaecati facilis magnam, consequuntur commodi sint velit voluptate iste, sunt ab expedita autem aliquid nam possimus illo, id laudantium! Nostrum.
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+            <article class="Tcard">
+                <img src="{% static 'sources/images/ProyectoFreaks3D.png' %}" alt="">
+                <div>
+                    <strong>Title</strong>
+                    <p>
+                        Descriptrion: Lorem ipsum dolor sit amet consectetur 
+                        adipisicing elit. Accusamus nihil expedita quaerat, placeat 
+                        architecto unde inventore amet reprehenderit? Odio placeat 
+                        quaerat nobis quia enim reiciendis natus, beatae cumque laboriosam
+                         voluptatem?
+                    </p>
+                    <p>
+                        <span>By: </span><a href="">Link de la persona</a>
+                    </p>
+                </div>
+                <button>
+                    Leer articulo
+                </button>
+            </article>
+        </section>
+    </main>
+{% endblock  %}

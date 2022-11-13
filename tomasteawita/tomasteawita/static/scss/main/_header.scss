@@ -1,0 +1,58 @@
+header{
+    display: flex;
+    flex-direction: column;
+    nav{
+        ul{
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+           justify-content: space-between;
+           li:first-child{
+            a{
+                img{
+                    width: 128px;
+                }
+            }
+            }
+           li:last-child{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            @import "searchInput";
+            a{
+                display: inline-block;
+                font-family: $font-texto;
+                color: $parrafos;
+                text-decoration:underline;
+                transition: .5s;
+                button{
+                    font-size: $f-tiny;
+                    background-color: $fondo-botones;
+                    border: 1px solid $borde-botones;
+                    border-radius: 6px;
+                    width: 128px;
+                    height: 52px;
+                    font-family: $font-H;
+                    font-weight: 400;
+                    color: $borde-botones;
+                    transition: all .3s;
+                    &:hover{
+                        background-color: lighten($fondo-botones, 10%) ;
+                    }
+                    &:active{
+                        background-color: lighten($fondo-botones, 20%) ;
+                    }
+                }
+            }
+           }    
+        } 
+    }
+}
+hr{
+    width: 90%;
+    color: $parrafos;
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: 32px;
+}

@@ -18,7 +18,6 @@ from django.contrib import admin
 from .views import index,search,create,lobby
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',index,name="index"),
     path('search/', search, name="search"),
     path('create/', create, name="create"),

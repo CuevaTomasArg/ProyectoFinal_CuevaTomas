@@ -6,12 +6,7 @@ class User(models.Model):
     password = models.CharField(max_length=256)
     perfil_image = models.ImageField()
     perfil_description = models.CharField(max_length=256)
-    posts = []
-    posts_saves = []
-    def set_post(self, post):
-        self.posts.append(post) 
-    def set_posts_saves(self, post):
-        self.posts_saves.append(post)
+    developer_type = models.CharField(max_length=65)
 
 class Post(models.Model):
     title = models.CharField(max_length=75)
@@ -22,4 +17,4 @@ class Post(models.Model):
 
 class Visit(models.Model):
     email = models.EmailField()
-    posts_saves = []
+    developer_type = models.CharField(max_length=65)

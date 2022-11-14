@@ -1,31 +1,42 @@
 header{
-    display: flex;
-    flex-direction: column;
+    height: 64px;
     nav{
-        ul{
-           display: flex;
-           flex-direction: row;
-           align-items: center;
-           justify-content: space-between;
-           li:first-child{
-            a{
-                img{
-                    width: 128px;
-                }
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+        "img container1"
+        "img container2";
+        >a{
+            grid-area: img;
+            img{
+                height:156px;
+                margin: 24px 64px;
             }
-            }
-           li:last-child{
+        }
+        >ul{
+            grid-area: container1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 32px 12px 0px auto;
+           li{
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             @import "searchInput";
+            >form,>div{
+                margin: auto 18px;
+            }
             a{
                 display: inline-block;
                 font-family: $font-texto;
                 color: $parrafos;
                 text-decoration:underline;
                 transition: .5s;
+                margin: auto 12px;
                 button{
                     font-size: $f-tiny;
                     background-color: $fondo-botones;
@@ -46,13 +57,16 @@ header{
                 }
             }
            }    
+        }
+        hr{
+            width: 100%;
+            color: $parrafos;
+            margin-right: 0;
+            margin-left: auto;
+            margin-bottom: 32px;
+            grid-area: container2;
+            height: 1px;
         } 
     }
 }
-hr{
-    width: 90%;
-    color: $parrafos;
-    margin-right: 0;
-    margin-left: auto;
-    margin-bottom: 32px;
-}
+

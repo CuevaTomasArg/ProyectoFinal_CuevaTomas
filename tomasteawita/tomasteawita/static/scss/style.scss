@@ -9,13 +9,14 @@
 }
 
 body{
-    background-color: lighten($fondo, 5%) ;
+    background-color: lighten($fondo, 3%) ;
 }
 main{
-    background-color: #e6e6e6;
+    margin-top: 128px;
 }
 a{
-    text-decoration: none
+    text-decoration: none;
+    color:$a
 }
 p,label{
     color: $parrafos;
@@ -34,10 +35,10 @@ hr{
     background-color: $parrafos
 }
 @import "main/loader";
-// @import "main/consulta";
+@import "main/search";
 @import "main/header";
 @import "main/index";
-// @import "main/projects";
-// @import "main/aside";
+@import "main/createpost";
+@import "main/lobby";
 @import "main/footer";
 @import "main/cards";

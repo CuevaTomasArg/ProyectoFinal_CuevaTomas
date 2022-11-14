@@ -1,0 +1,36 @@
+.search{
+    >nav{
+        background-color: lighten($fondo, 8%);
+        height: 64px;
+        >div{
+            height: 100%;
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 256px;
+            justify-content: flex-start;
+            span{
+                color: $a;
+                margin: 4px;
+            }
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
+    .results{
+        margin: 1rem auto;
+        width:100%;
+        max-width:1775px;
+        column-count: 5;
+        .Tcard{
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin: 16px;
+            img{
+                width: 90%;
+            }
+        }
+    }
+}

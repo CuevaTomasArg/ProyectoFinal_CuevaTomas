@@ -1,7 +1,3 @@
-$image-size: 200px;
-$gap-size: 2rem;
-$breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) !default;
-
 .index{
     .presentation{
         position: relative;
@@ -33,22 +29,18 @@ $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) !default;
             align-items: center;
             text-align: center;
             >h1{
-                color:lighten($fondo, 5%)
+                color:lighten(nth($colores,1), 10%);
+                font-weight: 700;
             }
             p{
-                color: lighten($fondo, 5%);
+                color: lighten(nth($colores,1), 10%);
+                font-weight: 700;;
                 width: 600px;
                 font-size: $f-small;
             }
         }
     }
-    .more-views{
-        margin: 64px auto;
-        position: relative;
-        overflow: hidden;
-        max-width: 972px;
-        @import "carousel";
-    }
+    
     .view-post{
         margin: 1rem auto;
         width:100%;
@@ -62,43 +54,5 @@ $breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) !default;
                 width: 90%;
             }
         }
-        // display: grid;
-        // grid-auto-rows: $image-size;
-        // gap: $gap-size ;
-        // grid-auto-flow: row dense;
-        // @media all and (min-width: map-get($breakpoints, 'small')){
-        //     $num-columns: 1;
-        //     grid-template-columns: repeat($num-columns, 1fr);}
-        // @media all and (min-width: map-get($breakpoints, 'medium')){
-        //     $num-columns: 3;
-        //     grid-template-columns: repeat($num-columns, 1fr);}
-        // @media all and (min-width: map-get($breakpoints, 'large')){
-        //     $num-columns: 6;
-        //     grid-template-columns: repeat($num-columns, 1fr);}
-    //     &Tcard{
-    //         text-align: center;
-    //         border-radius: 24px;
-    //         background-color: darken($fondo-botones, 5%) ;
-    //         &:nth-child(11n+1){
-    //             grid-column: span 1}
-    //         &:nth-child(11n+4){
-    //             grid-column: span 2;
-    //             grid-row: span 1}
-    //         &:nth-child(11n+6){
-    //             grid-column: span 3;
-    //             grid-row: span 1}
-    //         &:nth-child(11n+7){
-    //             grid-column: span 1;
-    //             grid-row: span 2}
-    //         &:nth-child(11n+8){
-    //             grid-column: span 2;
-    //             grid-row: span 2}
-    //         &:nth-child(11n+9){
-    //             grid-row: span 3}}
-    //     &__image{
-    //         width: 100%;
-    //         height: 100%;
-    //         object-fit: cover}
-    // }}
     }
 }

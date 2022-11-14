@@ -15,8 +15,20 @@
                 <a href="{% url 'index' %}">Inicio</a><span>/</span><a href="{% url 'search' %}">Explorar</a>
             </div>
         </nav>
-        <section class="results">
+        <section class="view-post research">
+            <form action="" method="get">
+                <label for=""></label>
+                <input type="text" name="category" id="category">
+                <label for=""></label>
+                <input type="submit" value="Search">
+            </form>
 
+            {% if post %}
+                {% for i in post %}
+                    <Hago_la_wea_de_html> aca va el contenido de las cosas</Hago_la_wea_de_html>
+            {% else%}
+                <p>No existen posts con dicho titulo</p>
+            {% endif %}
         </section>
     </main>
 {% endblock %}

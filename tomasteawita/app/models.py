@@ -14,6 +14,7 @@ class Post(models.Model):
     image = models.ImageField()
     user = models.CharField(max_length=100)
     id_user = models.IntegerField()
+    category = models.CharField(max_length=100)
 
 class Visit(models.Model):
     email = models.EmailField()

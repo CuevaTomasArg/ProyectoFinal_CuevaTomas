@@ -13,7 +13,6 @@ class Post(models.Model):
     description = models.CharField(max_length=256)
     image = models.ImageField()
     user = models.CharField(max_length=100)
-    id_user = models.IntegerField()
     category = models.CharField(max_length=100)
 
 class Visit(models.Model):

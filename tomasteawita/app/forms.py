@@ -13,6 +13,7 @@ class Post_post_form(forms.Form):
     description = forms.CharField(max_length=256)
     image = forms.ImageField()
     user = forms.CharField(max_length=100)
+    category = forms.CharField(max_length=100)
 
 class Post_visit_form(forms.Form):
     email = forms.EmailField()

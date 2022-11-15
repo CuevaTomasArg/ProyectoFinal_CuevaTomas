@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}Iniciar Sesion - Tomasteawita{% endblock %}
+
+{% block main %}
+    <main class="login">
+        <section>
+            <form action="" method="post"> {% csrf_token %}
+
+                <h3>Subir un post</h3>
+            
+                <ul>
+                    {{form.as_ul}}
+                </ul>
+            
+                <button type="submit" value="Enviar">Enviar</button>
+            </form>
+            
+        </section>
+        
+    </main>
+{% endblock %}

@@ -17,17 +17,31 @@
         </nav>
         <section class="view-post research">
             <form action="" method="get">
-                <label for=""></label>
+                <label for="category">Buscar por categoria</label>
                 <input type="text" name="category" id="category">
-                <label for=""></label>
-                <input type="submit" value="Search">
+                <input type="submit" value="Buscar">
             </form>
 
-            {% if post %}
-                {% for i in post %}
-                    <Hago_la_wea_de_html> aca va el contenido de las cosas</Hago_la_wea_de_html>
+            {% if posts %}
+                {% for post in posts %}
+                    <article class="Tcard">
+                        <img src="{{post.image.url}}" alt="">
+                        <div>
+                            <strong>{{post.title}}</strong>
+                            <p>
+                                {{post.description}}
+                            </p>
+                            <p>
+                                <span>By: </span><a href="">{{post.user}}</a>
+                            </p>
+                        </div>
+                        <button>
+                            Leer articulo
+                        </button>
+                    </article>
+                {% endfor %}
             {% else%}
-                <p>No existen posts con dicho titulo</p>
+                <p>No existen posts con dicha categoria</p>
             {% endif %}
         </section>
     </main>

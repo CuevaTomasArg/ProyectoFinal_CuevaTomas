@@ -9,18 +9,16 @@ def index(request):
     return render(request, 'index.html',context=context)
 
 def search(request):
-    if request.GET.get('title', False):
-        title = request.GET['title']
-        post = Post.objects.filter(title__icontains=title)
+    if request.GET.get('category', False):
+        category = request.GET['category']
+        posts = Post.objects.filter(category__icontains=category)
 
-        return render(request, 'buscar_profesor.html', {'post': post})
+        return render(request, 'search.html', {'posts': posts})
     else:
         respuesta = 'No hay datos'
-    posts = Post.objects.all()
-    context = {'posts': posts}
-    return render(request, 'search.html', context = context)
+    return render(request, 'search.html', {'respuesta':respuesta})
 
-def create_post(request):
+def upload_post(request):
     if request.method == 'POST':
         post = Post_post_form(data = request.POST, files= request.FILES)
         if post.is_valid():
@@ -30,7 +28,7 @@ def create_post(request):
         return render(request,'checkPostCreate.html')
     else:
         form = Post_post_form()
-    return render(request, 'createpost.html',{'form': form})
+    return render(request, 'uploadPost.html',{'form': form})
 
 def singin(request):
     if request.method == 'POST':

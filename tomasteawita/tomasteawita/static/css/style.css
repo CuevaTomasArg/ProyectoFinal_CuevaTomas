@@ -8,16 +8,16 @@
 }
 
 body {
-  background-color: #120325;
-}
-
-main {
-  margin-top: 128px;
+  background-color: #1f1f1f;
 }
 
 a {
   text-decoration: none;
   color: #C2B8D0;
+}
+
+main {
+  z-index: 10;
 }
 
 p, label {
@@ -131,9 +131,11 @@ hr {
 }
 
 header {
-  height: 64px;
+  z-index: 1000;
 }
 header nav {
+  background-color: #120325;
+  height: 98px;
   display: grid;
   grid-template-columns: 1fr 10fr;
   grid-template-rows: 2fr 1fr;
@@ -144,7 +146,14 @@ header nav > a {
 }
 header nav > a img {
   height: 156px;
-  margin: 24px 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 24px 0;
+  background-color: #120325;
+  border-bottom-right-radius: 32px;
+  padding: 0 32px;
+  z-index: 1000;
 }
 header nav > ul {
   grid-area: container1;
@@ -218,11 +227,9 @@ header nav > ul li a button:active {
 header nav hr {
   width: 100%;
   color: #F1E7FF;
-  margin-right: 0;
-  margin-left: auto;
-  margin-bottom: 32px;
+  margin: auto 0 0 auto;
   grid-area: container2;
-  height: 1px;
+  height: 1.5px;
 }
 
 .index .presentation {
@@ -281,6 +288,28 @@ header nav hr {
   width: 90%;
 }
 
+.singIn {
+  background-color: #1d053d;
+  height: 100vh;
+}
+.singIn section {
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.singIn section img {
+  height: 256px;
+}
+.singIn section form ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -290,6 +319,7 @@ footer {
   margin-top: 128px;
   padding-top: 16px;
   height: 256px;
+  background-color: #120325;
 }
 footer nav ul {
   display: flex;
@@ -320,7 +350,7 @@ footer div p {
 .Tcard {
   text-align: center;
   border-radius: 24px;
-  background-color: #52447d;
+  background: #52447d;
   display: flex;
   flex-direction: column;
   align-items: center;

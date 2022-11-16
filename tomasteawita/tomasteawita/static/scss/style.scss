@@ -8,7 +8,7 @@
   padding: 0;
 }
 body{
-    background-color: #1f1f1f;
+    background-color: lighten($fondo, 3%);
 }
 a{
     text-decoration: none;
@@ -37,7 +37,7 @@ hr{
 @import "main/search";
 @import "main/header";
 @import "main/index";
-@import "main/createpost";
+@import "main/postValid";
 @import "main/singIn";
 @import "main/footer";
 @import "main/cards";

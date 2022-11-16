@@ -11,9 +11,9 @@ urlpatterns = [
     path('',index,name="index"),
     path('search/', search, name="search"),
     path('uploadPost/', upload_post, name="Upload post"),
-    path('check/', checkPostCreate, name="checkPostCreate"),
-    path('singin/', singin, name="sing in"),
-    path('loginVisit/',loginVisit, name="loginVisit"),
+    path('valid/', post_valid, name="post_valid"),
+    path('singin/', sing_in, name="sing in"),
+    path('loginVisit/',login_visit, name="loginVisit"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns += [

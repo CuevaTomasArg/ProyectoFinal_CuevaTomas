@@ -15,13 +15,14 @@
                 <a href="{% url 'index' %}">Inicio</a><span>/</span><a href="{% url 'search' %}">Explorar</a>
             </div>
         </nav>
-        <section class="view-post research">
+        <section class="research">
             <form action="" method="get">
                 <label for="category">Buscar por categoria</label>
                 <input type="text" name="category" id="category">
                 <input type="submit" value="Buscar">
             </form>
-
+        </section>
+        <section class="view-post">
             {% if posts %}
                 {% for post in posts %}
                     <article class="Tcard">
@@ -41,7 +42,7 @@
                     </article>
                 {% endfor %}
             {% else%}
-                <p>No existen posts con dicha categoria</p>
+                <p style="text-align:center">No existen posts con dicha categoria</p>
             {% endif %}
         </section>
     </main>

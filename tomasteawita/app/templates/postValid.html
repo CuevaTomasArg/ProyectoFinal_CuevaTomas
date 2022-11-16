@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <main>
-        <h1>Posteo subido con exito</h1>
+    <main class="check">
+        <h1>Información subida con éxito</h1>
+        <p>:)</p>
     </main>
 
     <script type="text/javascript">
-        //Redireccionamiento tras 5 segundos
-        setTimeout( function() { window.location.href = "{% url 'index'%}"; }, 2000 );
-     </script>
+       setTimeout( function() { window.location.href = "{% url 'index'%}"; }, 2000 );
+    </script>
 </body>
 </html>

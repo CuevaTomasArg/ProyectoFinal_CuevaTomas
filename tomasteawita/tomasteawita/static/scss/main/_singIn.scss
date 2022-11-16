@@ -9,15 +9,47 @@
         align-items: center;
         justify-items: center;
         img{
+            margin: auto 0px auto auto;
             height: 256px;
         }
         form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: auto auto auto 156px;
+            border-radius: 16px;
+            background-color: nth($colores,2);
+            padding: 24px;
+            h3{
+                color: $parrafos;
+            }
             ul{
                 li{
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: flex-start;
+                    input{
+                        border-radius: 4px;
+                        border: 2px solid lighten($fondo,5%);
+                        background-color: lighten($fondo, 95%);
+                    }
+                }
+            }
+            button{
+                border-radius: 24px;
+                border: 1.5px solid $borde-botones;
+                background-color: darken(nth($colores,2), 15%);
+                height: 32px;
+                width: 128px;
+                &:hover{
+                    border-color: lighten($borde-botones ,5%);
+                    background-color:darken(nth($colores,2), 25%);
+                }
+                &:active{
+                    border-color: lighten($borde-botones ,10%);
+                    background-color:darken(nth($colores,2), 35%);
                 }
             }
         }

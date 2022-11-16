@@ -16,13 +16,13 @@
             <img src="{% static 'sources/logos/LogoMain.svg' %}" alt="Tomasteawita">
             <form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
 
-                <h3>Subir un post</h3>
+                <h3>Registrarse</h3>
             
                 <ul>
                     {{form.as_ul}}
                 </ul>
             
-                <button type="submit" value="Enviar">Enviar</button>
+                <button type="submit" value="Register">Registrarse</button>
             </form>
             
         </section>

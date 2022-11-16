@@ -19,18 +19,17 @@
             }
         }
     }
-    .results{
-        margin: 1rem auto;
-        width:100%;
-        max-width:1775px;
-        column-count: 5;
-        .Tcard{
-            break-inside: avoid;
-            page-break-inside: avoid;
-            margin: 16px;
-            img{
-                width: 90%;
-            }
+    .research{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        form{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
         }
     }
 }

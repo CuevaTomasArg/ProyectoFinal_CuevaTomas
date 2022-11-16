@@ -30,7 +30,7 @@ def upload_post(request):
         form = Post_post_form()
     return render(request, 'uploadPost.html',{'form': form})
 
-def singin(request):
+def sing_in(request):
     if request.method == 'POST':
         form = Post_user_form(data = request.POST, files= request.FILES)
         if form.is_valid():
@@ -42,7 +42,7 @@ def singin(request):
         form = Post_user_form()
     return render(request, 'singin.html',{'form': form})
 
-def loginVisit(request):
+def login_visit(request):
     if request.method == 'POST':
         form = Post_visit_form(request.POST)
         if form.is_valid():
@@ -54,5 +54,5 @@ def loginVisit(request):
         form = Post_visit_form()
     return render(request, 'loginVisit.html',{'form': form})
 
-def checkPostCreate(request):
-    return render(request, 'checkPostCreate.html')
+def post_valid(request):
+    return render(request, 'postValid.html')

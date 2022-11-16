@@ -25,7 +25,7 @@ def upload_post(request):
             post_cleaned = post.cleaned_data
             post_limpio = Post(title = post_cleaned['title'],description = post_cleaned['description'],image = post_cleaned['image'],user = post_cleaned['user'],category = post_cleaned['category'])
             post_limpio.save()
-        return render(request,'checkPostCreate.html')
+        return render(request,'postValid.html')
     else:
         form = Post_post_form()
     return render(request, 'uploadPost.html',{'form': form})
@@ -37,7 +37,7 @@ def sing_in(request):
             form_cleaned = form.cleaned_data
             user = User(user_name = form_cleaned['user_name'],email = form_cleaned['email'],password = form_cleaned['password'],perfil_image = form_cleaned['perfil_image'],perfil_description = form_cleaned['perfil_description'],developer_type = form_cleaned['developer_type'])
             user.save()
-            return render(request,'checkPostCreate.html')
+            return render(request,'postValid.html')
     else:
         form = Post_user_form()
     return render(request, 'singin.html',{'form': form})
@@ -49,7 +49,7 @@ def login_visit(request):
             form_cleaned = form.cleaned_data
             visit = Visit(email = form_cleaned['email'],developer_type = form_cleaned['developer_type'])
             visit.save()
-            return render(request,'checkPostCreate.html')
+            return render(request,'postValid.html')
     else:
         form = Post_visit_form()
     return render(request, 'loginVisit.html',{'form': form})

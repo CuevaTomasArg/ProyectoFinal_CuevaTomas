@@ -1,0 +1,23 @@
+.upload-post{
+    height: 100vh;
+    section{
+        text-align: center;
+        height: 100%;
+        form{
+            margin-top: 128px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            h3{
+                color:$parrafos;
+            }
+            ul{
+                li{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

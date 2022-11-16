@@ -41,6 +41,27 @@ hr {
   background-color: #F1E7FF;
 }
 
+.navigation {
+  background-color: #1d053d;
+  height: 64px;
+}
+.navigation > div {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 256px;
+  justify-content: flex-start;
+}
+.navigation > div span {
+  color: #C2B8D0;
+  margin: 4px;
+}
+.navigation > div a {
+  text-decoration: underline;
+}
+
 .loader-page {
   position: fixed;
   z-index: 25000;
@@ -94,26 +115,6 @@ hr {
   100% {
     transform: rotate(360deg);
   }
-}
-.search > nav {
-  background-color: #1d053d;
-  height: 64px;
-}
-.search > nav > div {
-  height: 100%;
-  width: 60%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 256px;
-  justify-content: flex-start;
-}
-.search > nav > div span {
-  color: #C2B8D0;
-  margin: 4px;
-}
-.search > nav > div a {
-  text-decoration: underline;
 }
 .search .research {
   display: flex;
@@ -432,6 +433,46 @@ footer div p {
 }
 .Tcard div {
   width: 90%;
+}
+
+.login {
+  height: 100vh;
+}
+.login section {
+  height: 100%;
+  text-align: center;
+}
+.login section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login section form ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-post {
+  height: 100vh;
+}
+.upload-post section {
+  text-align: center;
+  height: 100%;
+}
+.upload-post section form {
+  margin-top: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.upload-post section form h3 {
+  color: #F1E7FF;
+}
+.upload-post section form ul li {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

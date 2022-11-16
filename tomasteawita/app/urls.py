@@ -10,10 +10,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('',index,name="index"),
     path('search/', search, name="search"),
-    path('uploadPost/', upload_post, name="Upload post"),
+    path('uploadPost/', upload_post, name="upload post"),
     path('valid/', post_valid, name="post_valid"),
     path('singin/', sing_in, name="sing in"),
-    path('loginVisit/',login_visit, name="loginVisit"),
+    path('loginVisit/',login_visit, name="log_in"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns += [

@@ -24,3 +24,7 @@ class Visit(models.Model):
     developer_type = models.CharField(max_length=65)
     def __str__(self):
         return f'Visit: {self.email}, Developer:{self.developer_type}'
+
+class Comentario(models.Model):
+    text = models.CharField(max_length=256)
+    autor = models.CharField(max_length=100)

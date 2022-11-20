@@ -13,7 +13,7 @@
     &::before{
         content: "";
         position: absolute;
-        border: 2px solid #f1e7ffac;
+        border: 2px solid lighten($borde-botones, 5%);
         width:256px;
         height:256px;
         padding: 4px;

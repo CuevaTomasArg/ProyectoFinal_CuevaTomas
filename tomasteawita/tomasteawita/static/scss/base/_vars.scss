@@ -1,14 +1,13 @@
 
-$fondo-cartas : #0b0217be;
-$fondo:#0B0217;
-$fondo-offcanvas:#1E0B38;
-$colores:#9D86DF,#7563AA;
-$parrafos:#F1E7FF;
-$a:#C2B8D0;
-$fondo-botones:#3A2C5E;
-$borde-botones:#F1E7FF;
-$fondo-cartas:#21182D;
-$fondo-inputs:#130A1F;
+$fondo-cartas : darken(#E5EBF1,5%);
+$fondo:#E5EBF1;
+$fondo-offcanvas:#1A5784;
+$colores:#A8C2DC,darken(#A8C2DC,5%);
+$parrafos:#1A5784;
+// $a:#C2B8D0;
+$fondo-botones:#A8C2DC;
+$borde-botones:#1A5784;
+// $fondo-inputs:#130A1F;
 $font-boton:Helvetica;
 $font-texto:'Roboto','Quicksand',sans-serif;
 $font-H:'Roboto Flex', sans-serif;

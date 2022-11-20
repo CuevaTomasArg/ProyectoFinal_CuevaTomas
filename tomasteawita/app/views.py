@@ -8,11 +8,11 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView,UpdateV
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 #Los decoradores sirven para vistas  basadas en cñases
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 #los mixins sirven para vistas basadas en classes
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-@login_required
+# @login_required
 #Lo que hace este login es que evita que yo pueda acceder a ciertos campos si yo no estoy logeado
 #Pero esto me da un error 404, para corregir esto hay que ir a settings.py a hacer una configuracion para que en vez de que me de error, me envie
 #Al login u otra parte de la pagina. Sigue el omentario en el settings.py ->

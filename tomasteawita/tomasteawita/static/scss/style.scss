@@ -10,9 +10,9 @@
 body{
     background-color: lighten($fondo, 3%);
 }
-a{
+a,strong{
     text-decoration: none;
-    // color:$a
+    color:$a
 }
 main{
     z-index: 10;

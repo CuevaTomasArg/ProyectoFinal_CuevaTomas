@@ -4,7 +4,7 @@ $fondo:#E5EBF1;
 $fondo-offcanvas:#1A5784;
 $colores:#A8C2DC,darken(#A8C2DC,5%);
 $parrafos:#1A5784;
-// $a:#C2B8D0;
+$a: darken(nth($colores, 2 ),10%) ;
 $fondo-botones:#A8C2DC;
 $borde-botones:#1A5784;
 // $fondo-inputs:#130A1F;

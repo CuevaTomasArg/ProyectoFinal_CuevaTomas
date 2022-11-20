@@ -16,15 +16,25 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #Lo que hace este login es que evita que yo pueda acceder a ciertos campos si yo no estoy logeado
 #Pero esto me da un error 404, para corregir esto hay que ir a settings.py a hacer una configuracion para que en vez de que me de error, me envie
 #Al login u otra parte de la pagina. Sigue el omentario en el settings.py ->
+
+
 def search(request):
+    #En este codigo falta encontrar la forma de igualmente al principio mostrar todos
+    #Los objetos al principio
     if request.GET.get('category', False):
         category = request.GET['category']
         posts = Post.objects.filter(category__icontains=category)
 
         return render(request, 'search.html', {'posts': posts})
     else:
-        respuesta = 'No hay datos'
-    return render(request, 'search.html', {'respuesta':respuesta})
+        show_category = Post.objects.all()
+        show_category_buttons = []
+        for cat in show_category:
+            if  cat.category in show_category_buttons:
+                pass
+            else:
+                show_category_buttons.append(cat.category)
+    return render(request, 'search.html', {'show_category': show_category ,'show_category_buttons':show_category_buttons})
 
 def upload_post(request):
     if request.method == 'POST':
@@ -69,7 +79,6 @@ def post_valid(request):
 
 
 class Index(LoginRequiredMixin,ListView):
-    
     model = Post
     template_name = 'index.html'
 

@@ -11,8 +11,9 @@ body {
   background-color: #eff3f6;
 }
 
-a {
+a, strong {
   text-decoration: none;
+  color: #719cc6;
 }
 
 main {
@@ -217,7 +218,7 @@ header nav > ul li a button:active {
   position: relative;
   height: 600px;
   margin-top: 0;
-  background-color: #f6f8fa;
+  background-color: #16496f;
 }
 .index .presentation div:first-child {
   position: absolute;
@@ -382,13 +383,13 @@ footer div p {
 .Tcard {
   text-align: center;
   border-radius: 24px;
-  background: #5f8fbf;
+  background: #96b5d5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 5px 5px 10px 5px white;
-  -webkit-box-shadow: 5px 5px 10px 5px white;
-  -moz-box-shadow: 5px 5px 10px 5px white;
+  box-shadow: 5px 5px 10px 5px #ccdceb;
+  -webkit-box-shadow: 5px 5px 10px 5px #ccdceb;
+  -moz-box-shadow: 5px 5px 10px 5px #ccdceb;
 }
 .Tcard.Tcard-carousel {
   height: auto;

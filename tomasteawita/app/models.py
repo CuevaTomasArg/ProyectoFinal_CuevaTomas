@@ -18,7 +18,7 @@ class Post(models.Model):
     category = models.CharField(max_length=100)
     def __str__(self):
         return f'Post: {self.title}'
-
+    
 class Visit(models.Model):
     email = models.EmailField()
     developer_type = models.CharField(max_length=65)

@@ -1,7 +1,8 @@
 header{
     height: 116px;
+    background:linear-gradient(darken($fondo-offcanvas, 5%),$fondo-offcanvas ) ;
     nav{
-        background-color: lighten($fondo, 3%);
+        // background-color: lighten($fondo, 3%);
         height: 98px;
         display: flex;
         flex-direction: row;

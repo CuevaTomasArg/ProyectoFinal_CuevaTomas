@@ -34,7 +34,7 @@ hr{
     background-color: $parrafos
 }
 .navigation{
-    background-color: lighten($fondo, 8%);
+    background-color: lighten(nth($colores,2), 8%);
     height: 64px;
     >div{
         height: 100%;

@@ -19,21 +19,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def search(request):
-    #En este codigo falta encontrar la forma de igualmente al principio mostrar todos
-    #Los objetos al principio
+    show_category = Post.objects.all()
+    show_category_buttons = []
+    for cat in show_category:
+        if  cat.category in show_category_buttons:
+            pass
+        else:
+            show_category_buttons.append(cat.category)
     if request.GET.get('category', False):
         category = request.GET['category']
         posts = Post.objects.filter(category__icontains=category)
 
-        return render(request, 'search.html', {'posts': posts})
-    else:
-        show_category = Post.objects.all()
-        show_category_buttons = []
-        for cat in show_category:
-            if  cat.category in show_category_buttons:
-                pass
-            else:
-                show_category_buttons.append(cat.category)
+        return render(request, 'search.html', {'posts': posts,'show_category_buttons':show_category_buttons})
     return render(request, 'search.html', {'show_category': show_category ,'show_category_buttons':show_category_buttons})
 
 def upload_post(request):

@@ -5,11 +5,41 @@
         align-items: center;
         justify-content: space-evenly;
         form{
-            text-align: center;
+            >div{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                >button{
+                    background:lighten(nth($colores,2), 20%) ;
+                    border-radius: 6px;
+                    padding: 6px;
+                    margin: 24px;
+                    border: 1px solid $borde-botones;
+                    color: $borde-botones;
+                }
+            }
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             justify-content: space-evenly;
+            &:last-child{
+                justify-content: center;
+                input{
+                    background-color: lighten(nth($colores,2), 20%);
+                    border: 1px solid $borde-botones;
+                }
+                >button{
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                    border: 1px solid $fondo-offcanvas;
+                    background-color: $fondo-offcanvas;
+                    color:$fondo
+                }
+                >button,input{
+                    padding: 4px;
+                }
+            }
         }
     }
 }

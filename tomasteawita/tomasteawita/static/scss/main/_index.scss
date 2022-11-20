@@ -3,7 +3,7 @@
         position: relative;
         height: 600px;
         margin-top: 0;
-        background-color: darken($fondo-offcanvas, 5%);
+        background:linear-gradient(darken($fondo-offcanvas, 5%),transparent) ;
         div:first-child{
             position: absolute;
             top: 0;

@@ -7,21 +7,31 @@
 {% endblock  %}
 {% block main %}
     <main class="search">
+        <div class="loader-page">
+            <img src="{% static 'sources/logos/LogoMainBlue.svg' %}" alt="CuevaTomasArg">
+        </div>
         <nav class="navigation">
             <div>
                 <a href="{% url 'index' %}">Inicio</a><span>/</span><a href="{% url 'search' %}">Explorar</a>
             </div>
         </nav>
         <section class="research">
-            <form action="" method="get">
+            <form method="get">
+                <div>
                 {% for cat in show_category_buttons %}
-                    <button>
-                        {{cat}}
-                    </button>
+                    <!-- <input type="submit" value="{{cat}}" name="category" id="category"> -->
+                    <button type="submit" name="category" value="{{cat}}" id="category" >
+                        # {{cat}}
+                    </button> 
                 {% endfor %}
+                </div>
+            </form>
+            <form method="get">
                 <label for="category">Buscar por categoria</label>
                 <input type="text" name="category" id="category">
-                <input type="submit" value="Buscar">
+                <button type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
             </form>
         </section>
         <section class="view-post">

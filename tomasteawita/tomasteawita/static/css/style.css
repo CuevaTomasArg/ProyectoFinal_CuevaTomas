@@ -42,7 +42,7 @@ hr {
 }
 
 .navigation {
-  background-color: white;
+  background-color: #b3cae0;
   height: 64px;
 }
 .navigation > div {
@@ -122,18 +122,48 @@ hr {
   justify-content: space-evenly;
 }
 .search .research form {
-  text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+}
+.search .research form > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search .research form > div > button {
+  background: #dfe8f2;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 24px;
+  border: 1px solid #1A5784;
+  color: #1A5784;
+}
+.search .research form:last-child {
+  justify-content: center;
+}
+.search .research form:last-child input {
+  background-color: #dfe8f2;
+  border: 1px solid #1A5784;
+}
+.search .research form:last-child > button {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #1A5784;
+  background-color: #1A5784;
+  color: #E5EBF1;
+}
+.search .research form:last-child > button, .search .research form:last-child input {
+  padding: 4px;
 }
 
 header {
   height: 116px;
+  background: linear-gradient(#16496f, #1A5784);
 }
 header nav {
-  background-color: #eff3f6;
   height: 98px;
   display: flex;
   flex-direction: row;
@@ -218,7 +248,7 @@ header nav > ul li a button:active {
   position: relative;
   height: 600px;
   margin-top: 0;
-  background-color: #16496f;
+  background: linear-gradient(#16496f, transparent);
 }
 .index .presentation div:first-child {
   position: absolute;

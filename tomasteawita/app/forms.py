@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.models import  User
+from django.contrib.auth.forms import UserCreationForm
 
 class Post_user_form(forms.Form):
     user_name= forms.CharField(max_length=100)
@@ -18,3 +20,13 @@ class Post_post_form(forms.Form):
 class Post_visit_form(forms.Form):
     email = forms.EmailField()
     developer_type = forms.CharField(max_length=65)
+    
+class SingUpForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'password1',
+            'password2',
+        ]

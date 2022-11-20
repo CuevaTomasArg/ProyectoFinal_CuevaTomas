@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Home - Tomasteawita{% endblock  %}
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script defer src="{% static 'js/main.js' %}"></script>
+{% endblock  %}
+{% block main %}
+
+{% comment %} Aqui va el contenido principal de la pagina que en este caso al ser una vista detallada de un post.titlel
+lo que va a estar aca va a aser el post del detalle osea el posteo del post me entendes pibe o hablo en chino? la re cajeta de tu mamasita bebe uwu
+tue eres mi veve mi cecito fui fui {% endcomment %}
+
+{% endblock  %}
+{{post.title}}

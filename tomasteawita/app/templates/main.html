@@ -1,7 +1,7 @@
 {% extends 'tomasteawita/templates/base.html' %}
 {% load static %}
 {% block header %}
-    <a href="{% url 'upload post' %}">
+    <a href="{% url 'Update Post' %}">
         <button>Subir un post</button>
     </a>
     <a href="{% url 'log_in' %}">
@@ -9,5 +9,8 @@
     </a> 
     <a href="{% url 'sing in' %}">
         <button>Registrarse</button>
+    </a> 
+    <a href="{% url 'Logout' %}">
+        <button>Deslogearse</button>
     </a> 
 {% endblock  %}

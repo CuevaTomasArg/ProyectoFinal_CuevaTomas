@@ -26,7 +26,7 @@
             </form>
         </section>
         <section class="view-post">
-            {% for post in posts %}
+            {% for post in object_list %}
                 <article class="Tcard">
                     <img src="{{post.image.url}}" alt="">
                     <div>
@@ -39,7 +39,13 @@
                         </p>
                     </div>
                     <button>
-                        Leer articulo
+                        <a href="{% url 'DetailPost' post.id %}">Leer articulo</a> 
+                    </button>
+                    <button>
+                        <a href="{% url 'DeletePost' post.id %}">Eliminar</a> 
+                    </button>
+                    <button>
+                        <a href="{% url 'EditPost' post.id %}">Editar</a> 
                     </button>
                 </article>
             {% endfor %}

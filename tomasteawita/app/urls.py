@@ -8,7 +8,15 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('',index,name="index"),
+    # path('',index,name="index"),
+    path('',Index.as_view(),name="index"),
+    path('detailPost/<pk>',detail_post.as_view(),name="DetailPost"),
+    path('confirm_delete_post/<pk>',delete_post.as_view(),name="DeletePost"),
+    path('edit_post/<pk>',EditPost.as_view(),name="EditPost"),
+    path('Update_post/',UpdatePost.as_view(),name="Update Post"),
+    path('SingUp/',SingUp.as_view(),name="SingUp"),
+    path('login/',AdminLoginView.as_view(),name="Login"),
+    path('logout/',AdminLogoutView.as_view(),name="Logout"),
     path('search/', search, name="search"),
     path('uploadPost/', upload_post, name="upload post"),
     path('valid/', post_valid, name="post_valid"),

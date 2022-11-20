@@ -1,13 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import * #Post_post_form, Post_user_form, Post_visit_form
+from .forms import * 
 from .models import *
-# Create your views here.
-def index(request):
-    posts = Post.objects.all()
-    context = {'posts': posts}
-    return render(request, 'index.html',context=context)
+from django.views.generic import ListView 
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView,UpdateView
+from django.urls import reverse_lazy
+from django.contrib.auth.views import LoginView, LogoutView
+#Los decoradores sirven para vistas  basadas en cñases
+from django.contrib.auth.decorators import login_required
+#los mixins sirven para vistas basadas en classes
+from django.contrib.auth.mixins import LoginRequiredMixin
 
+@login_required
+#Lo que hace este login es que evita que yo pueda acceder a ciertos campos si yo no estoy logeado
+#Pero esto me da un error 404, para corregir esto hay que ir a settings.py a hacer una configuracion para que en vez de que me de error, me envie
+#Al login u otra parte de la pagina. Sigue el omentario en el settings.py ->
 def search(request):
     if request.GET.get('category', False):
         category = request.GET['category']
@@ -35,7 +43,7 @@ def sing_in(request):
         form = Post_user_form(data = request.POST, files= request.FILES)
         if form.is_valid():
             form_cleaned = form.cleaned_data
-            user = User(user_name = form_cleaned['user_name'],email = form_cleaned['email'],password = form_cleaned['password'],perfil_image = form_cleaned['perfil_image'],perfil_description = form_cleaned['perfil_description'],developer_type = form_cleaned['developer_type'])
+            user = Usuario(user_name = form_cleaned['user_name'],email = form_cleaned['email'],password = form_cleaned['password'],perfil_image = form_cleaned['perfil_image'],perfil_description = form_cleaned['perfil_description'],developer_type = form_cleaned['developer_type'])
             user.save()
             return render(request,'postValid.html')
     else:
@@ -56,3 +64,43 @@ def login_visit(request):
 
 def post_valid(request):
     return render(request, 'postValid.html')
+
+
+
+
+class Index(LoginRequiredMixin,ListView):
+    
+    model = Post
+    template_name = 'index.html'
+
+class detail_post(DetailView):
+    model = Post
+    template_name = 'detailPost.html'
+    
+class delete_post(DeleteView):
+    model = Post
+    success_url = '/'
+    template_name = 'confirm_post_delete.html'
+    
+class EditPost(UpdateView):
+    model = Post
+    success_url = '/'
+    template_name = 'edit_post.html'
+    fields = ['title','description','image','user','category']
+    
+class UpdatePost(CreateView):
+    model = Post
+    success_url = '/'
+    template_name = 'edit_post.html'
+    fields = ['title','description','image','user','category']
+    
+class SingUp(CreateView):
+    form_class = SingUpForm
+    success_url = reverse_lazy('index')
+    template_name = 'singup.html'
+
+class AdminLoginView(LoginView):
+    template_name = 'login.html'
+    
+class AdminLogoutView(LogoutView):
+    template_name = 'logout.html'

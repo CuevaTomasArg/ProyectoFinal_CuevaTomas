@@ -1,0 +1,3 @@
+Para hacer un login con la capacidad de los usuarios para modificar sus propios posteos
+
+Hay que hacer una consulta a la base de datos para hacer la personalizaciond el usuario

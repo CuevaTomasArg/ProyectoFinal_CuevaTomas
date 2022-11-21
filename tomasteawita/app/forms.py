@@ -12,7 +12,7 @@ class Post_user_form(forms.Form):
 
 class Post_post_form(forms.Form):
     title = forms.CharField(max_length=75)
-    description = forms.CharField(max_length=256)
+    description = forms.CharField(max_length=1024)
     image = forms.ImageField()
     user = forms.CharField(max_length=100)
     category = forms.CharField(max_length=100)

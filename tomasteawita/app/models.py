@@ -12,7 +12,7 @@ class Usuario(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=75)
-    description = models.CharField(max_length=256)
+    description = models.CharField(max_length=1024)
     image = models.ImageField(upload_to='image')
     user = models.CharField(max_length=100)
     category = models.CharField(max_length=100)

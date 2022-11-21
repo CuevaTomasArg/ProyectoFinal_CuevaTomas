@@ -4,6 +4,7 @@
 {% block script %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script defer src="{% static 'js/main.js' %}"></script>
+<script defer src="{% static 'js/preViewImage.js' %}"></script>
 {% endblock  %}
 {% block main %}
     <main class="upload-post">
@@ -12,6 +13,9 @@
                 <a href="{% url 'index' %}">Inicio</a><span>/</span><a href="{% url 'upload post' %}">Subir post</a>
             </div>
         </nav>
+        <section class="preview">
+            <img id="imagePreView">
+        </section>
         <section>
             <form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
 

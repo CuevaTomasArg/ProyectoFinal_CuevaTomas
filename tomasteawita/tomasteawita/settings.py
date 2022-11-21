@@ -113,6 +113,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+# Barra de herramientes full de ckeditor
 
 
 # Static files (CSS, JavaScript, Images)

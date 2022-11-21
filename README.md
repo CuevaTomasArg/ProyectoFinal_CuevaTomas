@@ -1,13 +1,15 @@
 # Entrega1_CuevaTomas
 Primera entrega del proyecto del curso de python
 
-##Tecnologias
-->python ultima version al dia de la fecha 16/11/2022
-->Django
-->Pillow
-->SASS
-->Boostrap
-->Ajax
+## Tecnologias
+<ul>
+  <li>->python ultima version al dia de la fecha 16/11/2022</li>
+  <li>->Django</li>
+  <li>->Pillow</li>
+  <li>->SASS</li>
+  <li>->Boostrap</li>
+  <li>->Ajax</li>
+</ul>
 
 ## Referencias
 Funcionalidades:

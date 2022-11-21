@@ -3,19 +3,61 @@
         text-align: center;
         height: 100%;
         form{
-            margin-top: 128px;
+            margin-top: 64px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
-            h3{
-                color:$parrafos;
-            }
             ul{
+                height: 100%;
+                width: 100%;
+                padding: 0;
                 li{
                     display: flex;
                     flex-direction: column;
+                    // width: 800px;
+                    label{
+                        font-size: $f-regular;
+                        margin: 4px auto 4px 400px;
+                    }
+                    input{
+                        background-color: transparent;
+                        border-bottom:1.5px solid $fondo-offcanvas;
+                        border-right:none;
+                        border-left:none;
+                        border-top:none;
+                        margin: 12px auto;
+                        width: 800px;
+                        color: $parrafos;
+                        padding: 4px;
+                    }
+                    textarea{
+                        resize: none;
+                        height: 600px;
+                        background-color: transparent;
+                        border:1.5px solid $fondo-offcanvas;
+                        margin: 12px auto;
+                        width: 800px;
+                        color: $parrafos;
+                        padding: 4px;
+                    }
+                    &:nth-child(1){
+                        input{
+                            color: $parrafos;
+                        }
+                    }
+                    &:nth-child(3){
+                        display: none;
+                    }
                 }
+            }
+            button{
+                background-color: $fondo-offcanvas;
+                border-radius: 4px;
+                color: $fondo;
+                padding: 4px;
+                width: 64px;
+                border: 1px solid $parrafos
             }
         }
     }
@@ -29,4 +71,17 @@
         height: 600px;
         object-fit: cover;
     }
+
+}
+.selectImageButton{
+    position: absolute;
+    top: 732px;
+    left: 128px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    font-size: 32px;
+    background-color: $fondo-botones;
+    color: $borde-botones;
+    border:1px solid $fondo-botones;
 }

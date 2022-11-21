@@ -8,7 +8,7 @@
 {% endblock  %}
 {% block main %}
     <main class="upload-post">
-        <nav class"navigation">
+        <nav class="navigation">
             <div>
                 <a href="{% url 'index' %}">Inicio</a><span>/</span><a href="{% url 'upload post' %}">Subir post</a>
             </div>
@@ -17,17 +17,15 @@
             <img id="imagePreView">
         </section>
         <section>
+            <button class="selectImageButton" id="selectImageBtn" onClick="document.getElementById('id_image').click();">
+                <i class="bi bi-card-image"></i>
+            </button>
             <form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
-
-                <h3>Subir un post</h3>
-            
-                <ul>
+                <ul id="formBody">
                     {{form.as_ul}}
                 </ul>
-            
-                <button type="submit" value="Enviar">Enviar</button>
+                <button type="submit" value="Up">Subir</button>
             </form>
-            
         </section>
         
     </main>

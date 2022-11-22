@@ -61,6 +61,22 @@ hr {
   text-decoration: underline;
 }
 
+.writeAnimation {
+  font-weight: bold;
+  animation: writing 3s ease infinite;
+}
+
+@keyframes writing {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .loader-page {
   position: fixed;
   z-index: 25000;
@@ -449,20 +465,46 @@ footer div p {
 
 .login {
   height: 100vh;
+  background-color: #E5EBF1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr;
 }
-.login section {
-  height: 100%;
-  text-align: center;
-}
-.login section form {
+.login form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
-.login section form ul li {
+.login form ul {
+  background-color: #A8C2DC;
+  border-radius: 16px;
+  padding: 24px;
+  list-style-type: none;
+}
+.login form ul li {
   display: flex;
   flex-direction: column;
+  height: 64px;
+  margin: 64px 32px;
+}
+.login form ul li input {
+  width: 256px;
+}
+.login section {
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+.login section div {
+  height: 100%;
+}
+.login section .image-carousel-tomasteawita {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  overflow: hidden;
+  opacity: 0.9;
 }
 
 .upload-post section {

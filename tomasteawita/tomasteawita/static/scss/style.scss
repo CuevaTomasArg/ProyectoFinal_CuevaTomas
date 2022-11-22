@@ -53,6 +53,24 @@ hr{
         }
     }
 }
+
+.writeAnimation{
+    font-weight: bold;
+    animation: writing 3s ease infinite;
+}
+
+@keyframes writing {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0
+    }
+    
+}
 @import "main/loader";
 @import "main/search";
 @import "main/header";

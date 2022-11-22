@@ -1,19 +1,43 @@
 .login{
     height: 100vh;
+    background-color: $fondo;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        ul{
+        background-color: $fondo-botones;
+        border-radius: 16px;
+        padding: 24px;
+        list-style-type: none;
+            li{
+                display: flex;
+                flex-direction: column;
+                height: 64px;
+                margin: 64px 32px;
+                input{
+                    width: 256px;
+                }
+            }
+        }
+    }
     section{
         height:100%;
         text-align: center;
-        form{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            ul{
-                li{
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
+        width: 100%;
+        div{
+            height: 100%;
+        }
+        .image-carousel-tomasteawita{
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+            overflow: hidden;
+            opacity: .9;
         }
     }
 }

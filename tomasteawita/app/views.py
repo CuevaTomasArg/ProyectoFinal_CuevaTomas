@@ -39,8 +39,8 @@ def upload_post(request):
         post = Post_post_form(data = request.POST, files= request.FILES)
         if post.is_valid():
             post_cleaned = post.cleaned_data
-            post_limpio = Post(title = post_cleaned['title'],description = post_cleaned['description'],image = post_cleaned['image'],user = post_cleaned['user'],category = post_cleaned['category'])
-            post_limpio.save()
+            # post_limpio = Post(user = user,title = post_cleaned['title'],description = post_cleaned['description'],image = post_cleaned['image'],category = post_cleaned['category'])
+            # post_limpio.save()
         return render(request,'postValid.html')
     else:
         form = Post_post_form()
@@ -87,6 +87,8 @@ class Index(LoginRequiredMixin,ListView):
     model = Post
     template_name = 'index.html'
 
+
+
 class detail_post(DetailView):
     model = Post
     template_name = 'detailPost.html'
@@ -106,8 +108,10 @@ class UpdatePost(CreateView):
     model = Post
     success_url = '/'
     template_name = 'edit_post.html'
-    fields = ['title','description','image','user','category']
+    fields = ['title','description','image','category','avatar']
     
+    
+
 class SingUp(CreateView):
     form_class = SingUpForm
     success_url = reverse_lazy('index')

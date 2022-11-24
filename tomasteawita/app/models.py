@@ -12,7 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=75)
     description = models.CharField(max_length=1024)
     image = models.ImageField(upload_to='image',null=True,blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
+    avatar = models.ForeignKey(Avatar, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=100)
     def __str__(self):
         return f'Post: {self.title}'

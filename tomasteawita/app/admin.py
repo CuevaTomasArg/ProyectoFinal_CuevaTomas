@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Usuario)
+admin.site.register(Avatar)
 admin.site.register(Post)
-admin.site.register(Visit)
+admin.site.register(Comentario)
 # Register your models here.

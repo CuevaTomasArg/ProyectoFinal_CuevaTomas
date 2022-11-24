@@ -8,7 +8,6 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    # path('',index,name="index"),
     path('',Index.as_view(),name="index"),
     path('detailPost/<pk>',detail_post.as_view(),name="DetailPost"),
     path('confirm_delete_post/<pk>',delete_post.as_view(),name="DeletePost"),
@@ -21,7 +20,7 @@ urlpatterns = [
     path('uploadPost/', upload_post, name="upload post"),
     path('valid/', post_valid, name="post_valid"),
     path('singin/', sing_in, name="sing in"),
-    path('loginVisit/',login_visit, name="log_in"),
+    path('editUser/',edit_user, name="edit user"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns += [

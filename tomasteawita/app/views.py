@@ -51,30 +51,37 @@ def sing_in(request):
         form = Post_user_form(data = request.POST, files= request.FILES)
         if form.is_valid():
             form_cleaned = form.cleaned_data
-            user = Usuario(user_name = form_cleaned['user_name'],email = form_cleaned['email'],password = form_cleaned['password'],perfil_image = form_cleaned['perfil_image'],perfil_description = form_cleaned['perfil_description'],developer_type = form_cleaned['developer_type'])
+            user = Avatar(perfil_image = form_cleaned['perfil_image'],perfil_description = form_cleaned['perfil_description'],developer_type = form_cleaned['developer_type'])
             user.save()
             return render(request,'postValid.html')
     else:
         form = Post_user_form()
     return render(request, 'singin.html',{'form': form})
 
-def login_visit(request):
-    if request.method == 'POST':
-        form = Post_visit_form(request.POST)
-        if form.is_valid():
-            form_cleaned = form.cleaned_data
-            visit = Visit(email = form_cleaned['email'],developer_type = form_cleaned['developer_type'])
-            visit.save()
-            return render(request,'postValid.html')
-    else:
-        form = Post_visit_form()
-    return render(request, 'loginVisit.html',{'form': form})
 
 def post_valid(request):
     return render(request, 'postValid.html')
 
-
-
+def edit_user(request):
+    user = request.user
+    if request.method == 'POST':
+        user_form = UserEditForm(request.POST)
+        if user_form.is_valid():
+            information = user_form.cleaned_data
+            user.username = information['username']
+            user.email = information['email']
+            user.password1 = information['password1']
+            user.password2 = information['password2']
+            user.save()
+            return render(request,'index.html',{'user': user})
+            
+    else:
+        user_form = UserEditForm(initial={'username': user.username,'email': user.email})
+            
+    return render(request,'editUser.html',{
+        'form': user_form,
+        'user': user
+    })
 
 class Index(LoginRequiredMixin,ListView):
     model = Post

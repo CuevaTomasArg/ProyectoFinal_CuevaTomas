@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+    <form action="post">{% csrf_token %}
+        {{form.as_ul}}
+        <button type="submit">Actualizar</button>
+    </form>
+
+
+
+
+{% endblock main %}
+

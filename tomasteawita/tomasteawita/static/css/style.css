@@ -491,6 +491,21 @@ footer div p {
 .login form ul li input {
   width: 256px;
 }
+.login form button {
+  background-color: transparent;
+  border: 1.5px solid #a3b8cd;
+  color: #a3b8cd;
+  border-radius: 32px;
+  padding: 4px;
+  transition: all 0.35s;
+}
+.login form button:hover {
+  color: #E5EBF1;
+  background-color: #a3b8cd;
+}
+.login form button:active {
+  background-color: #c4d2df;
+}
 .login section {
   height: 100%;
   text-align: center;

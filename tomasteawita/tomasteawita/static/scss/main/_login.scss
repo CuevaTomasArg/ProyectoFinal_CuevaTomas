@@ -10,10 +10,10 @@
         align-items: center;
         justify-content: space-evenly;
         ul{
-        background-color: $fondo-botones;
-        border-radius: 16px;
-        padding: 24px;
-        list-style-type: none;
+            background-color: $fondo-botones;
+            border-radius: 16px;
+            padding: 24px;
+            list-style-type: none;
             li{
                 display: flex;
                 flex-direction: column;
@@ -22,6 +22,21 @@
                 input{
                     width: 256px;
                 }
+            }
+        }
+        button{
+            background-color: transparent;
+            border: 1.5px solid darken($fondo,20%);
+            color: darken($fondo,20%);
+            border-radius: 32px;
+            padding: 4px;
+            transition: all .35s;
+            &:hover{
+                color: $fondo;
+                background-color: darken($fondo,20%);
+            }
+            &:active{
+                background-color: darken($fondo,10%);
             }
         }
     }

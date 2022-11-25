@@ -8,15 +8,17 @@ class Avatar(models.Model):
     def __str__(self):
         return f'Usuario: {self.user.username}, Email: {self.user.email}'
 
+    
 class Post(models.Model):
     title = models.CharField(max_length=75)
-    description = models.CharField(max_length=1024)
+    description = models.CharField(max_length=256)
+    text = models.TextField(max_length=1040, null=True, blank=True)
     image = models.ImageField(upload_to='image',null=True,blank=True)
-    avatar = models.ForeignKey(Avatar, on_delete=models.CASCADE,null=True,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=100)
     def __str__(self):
         return f'Post: {self.title}'
-    
+
 class Comentario(models.Model):
     text = models.CharField(max_length=256)
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)

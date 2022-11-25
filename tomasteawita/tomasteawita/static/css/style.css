@@ -131,48 +131,27 @@ hr {
     transform: rotate(360deg);
   }
 }
-.search .research {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
 .search .research form {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+}
+.search .research form p {
+  text-align: center;
+  margin: 4px auto;
 }
 .search .research form > div {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
-.search .research form > div > button {
+.search .research form > div > button, .search .research form > div a {
   background: #dfe8f2;
   border-radius: 6px;
   padding: 6px;
   margin: 24px;
   border: 1px solid #1A5784;
   color: #1A5784;
-}
-.search .research form:last-child {
-  justify-content: center;
-}
-.search .research form:last-child input {
-  background-color: #dfe8f2;
-  border: 1px solid #1A5784;
-}
-.search .research form:last-child > button {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border: 1px solid #1A5784;
-  background-color: #1A5784;
-  color: #E5EBF1;
-}
-.search .research form:last-child > button, .search .research form:last-child input {
-  padding: 4px;
 }
 
 header {
@@ -570,7 +549,7 @@ footer div p {
 .upload-post section form ul li:nth-child(1) input {
   color: #1A5784;
 }
-.upload-post section form ul li:nth-child(3) {
+.upload-post section form ul li:nth-child(3), .upload-post section form ul li:nth-child(4), .upload-post section form ul li:nth-child(6) {
   display: none;
 }
 .upload-post section form button {

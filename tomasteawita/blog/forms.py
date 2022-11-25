@@ -6,18 +6,21 @@ class Post_user_form(forms.Form):
     perfil_image = forms.ImageField()
     perfil_description = forms.CharField(max_length=1024)
     developer_type = forms.CharField(max_length=65)
+    
 
-class Post_post_form(forms.Form):
+class ComentForm(forms.Form):
+    text = forms.TextInput()
+    user = forms.ModelChoiceField(queryset=User.objects.all())
+    post = forms.ModelChoiceField(queryset=Post.objects.all())
+
+class PostForm(forms.Form):
     title = forms.CharField(max_length=75)
-    description = forms.CharField(max_length=1024)
+    description = forms.CharField(max_length=256)
+    text = forms.TextInput()
     image = forms.ImageField()
-    category = forms.CharField(max_length=100)
-    
-    
-class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = '__all__'
+    user = forms.ModelChoiceField(queryset=User.objects.all())
+    category = forms.ModelChoiceField(queryset=Category.objects.all())    
+    date = forms.DateTimeField()
         
 class SingUpForm(UserCreationForm):
     class Meta:

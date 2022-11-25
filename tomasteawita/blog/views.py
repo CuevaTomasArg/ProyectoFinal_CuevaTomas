@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import * 
 from .models import *
+from datetime import datetime
 from django.views.generic import ListView 
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView,UpdateView
@@ -27,23 +28,22 @@ def search(request):
             pass
         else:
             show_category_buttons.append(cat.category)
-    if request.GET.get('category', False):
-        category = request.GET['category']
-        posts = Post.objects.filter(category__icontains=category)
-
+    if request.GET.get('category_id', False):
+        category_id = request.GET['category_id']
+        posts = Post.objects.filter(category_id=category_id)
         return render(request, 'search.html', {'posts': posts,'show_category_buttons':show_category_buttons})
     return render(request, 'search.html', {'show_category': show_category ,'show_category_buttons':show_category_buttons})
 
 def upload_post(request):
     if request.method == 'POST':
-        post = Post_post_form(data = request.POST, files= request.FILES)
+        post = PostForm(initial={'user': request.user.pk,'date':datetime.now()},data = request.POST, files= request.FILES)
         if post.is_valid():
             post_cleaned = post.cleaned_data
-            # post_limpio = Post(user = user,title = post_cleaned['title'],description = post_cleaned['description'],image = post_cleaned['image'],category = post_cleaned['category'])
-            # post_limpio.save()
+            post_clean = Post(title = post_cleaned['title'],description = post_cleaned['description'],text = post_cleaned['text'],image = post_cleaned['image'],category = post_cleaned['category'])
+            post_clean.save()
         return render(request,'postValid.html')
     else:
-        form = Post_post_form()
+        form = PostForm(initial={'text':"Aqui va el contenido"})
     return render(request, 'uploadPost.html',{'form': form})
 
 def post_valid(request):
@@ -70,14 +70,26 @@ def edit_user(request):
         'user': user
     })
 
+
+#Me falta hacer un monton de esta vista de detalle de los post con los formularios pero se va a poder.
+#Aun me falta hacer la vista del usuario osea del avatar y crear el avatar a travez del usuario
+#Y que se pueda ver el usuario a tracez de los post
+
+def detail_post(request,id_post):
+    post = Post.objects.get(id=id_post)
+    if request.method == 'POST':
+        coment_form = ComentForm(initial={'user':request.user.pk,'post':id_post},data = request.POST, files= request.FILES)
+    
+
 class Index(LoginRequiredMixin,ListView):
     model = Post
     template_name = 'index.html'
 
 
 
-class detail_post(DetailView):
+class detail_post(DetailView,CreateView):
     model = Post
+    form_class = ComentForm
     template_name = 'detailPost.html'
     
 class delete_post(DeleteView):

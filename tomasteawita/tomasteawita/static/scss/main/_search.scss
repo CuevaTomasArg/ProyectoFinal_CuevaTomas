@@ -1,43 +1,24 @@
 .search{
     .research{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
         form{
+            display: flex;
+            flex-direction: column;
+            p{
+                text-align: center;
+                margin: 4px auto;
+            }
             >div{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-evenly;
+                justify-content: center;
                 align-items: center;
-                >button{
+                >button,a{
                     background:lighten(nth($colores,2), 20%) ;
                     border-radius: 6px;
                     padding: 6px;
                     margin: 24px;
                     border: 1px solid $borde-botones;
                     color: $borde-botones;
-                }
-            }
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-evenly;
-            &:last-child{
-                justify-content: center;
-                input{
-                    background-color: lighten(nth($colores,2), 20%);
-                    border: 1px solid $borde-botones;
-                }
-                >button{
-                    border-top-right-radius: 6px;
-                    border-bottom-right-radius: 6px;
-                    border: 1px solid $fondo-offcanvas;
-                    background-color: $fondo-offcanvas;
-                    color:$fondo
-                }
-                >button,input{
-                    padding: 4px;
                 }
             }
         }

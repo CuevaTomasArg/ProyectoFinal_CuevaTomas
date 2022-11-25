@@ -8,11 +8,15 @@
 {% block main %}
 <main>
     <section>
-        <!-- Imagen del posteo -->
+        <img src="{{post.image.url}}" alt="">
     </section>
     
     <section>
-        <!-- <aside>Aca va toda la descripcion de la persona que hizo el post, lo que se encuenra en el avatar</aside> -->
+        <aside>
+            <div>
+                {{post.user.username}}
+            </div>
+        </aside> 
         <article>
             <!-- <p>Descripciond dle posteo</p> -->
             <!-- <p>Texto del posteo</p> -->
@@ -20,6 +24,9 @@
                 <!-- <span>By:</span><a href=""> Aca va el usuario con la url que lo envia hasta el avatar de ese usuario</a> -->
             </nav>
         </article>
+    <form action="" method="post"> {% csrf_token %}
+        {{form.as_p}}
+    </form>
     </section>
 
 </main>
@@ -31,4 +38,3 @@ lo que va a estar aca va a aser el post del detalle osea el posteo del post me e
 tue eres mi veve mi cecito fui fui {% endcomment %}
 
 {% endblock  %}
-{{post.title}}

@@ -17,21 +17,15 @@
         </nav>
         <section class="research">
             <form method="get">
+                <p for="category">Categorias</p>
                 <div>
-                {% for cat in show_category_buttons %}
-                    <!-- <input type="submit" value="{{cat}}" name="category" id="category"> -->
-                    <button type="submit" name="category" value="{{cat}}" id="category" >
-                        # {{cat}}
+                    <a href="{% url 'search' %}">#Ver todas</a>
+                    {% for cat in show_category_buttons %}
+                    <button type="submit" name="category_id" value="{{cat.id}}" id="category_id" >
+                        # {{cat.name}}
                     </button> 
                 {% endfor %}
                 </div>
-            </form>
-            <form method="get">
-                <label for="category">Buscar por categoria</label>
-                <input type="text" name="category" id="category">
-                <button type="submit">
-                    <i class="bi bi-search"></i>
-                </button>
             </form>
         </section>
         <section class="view-post">

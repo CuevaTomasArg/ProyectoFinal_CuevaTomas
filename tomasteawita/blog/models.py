@@ -9,13 +9,19 @@ class Avatar(models.Model):
         return f'Usuario: {self.user.username}, Email: {self.user.email}'
 
     
+class Category(models.Model):
+    name = models.CharField(max_length=65)
+    date_creation = models.DateTimeField()
+    def __str__(self):
+        return f"{self.name}"
+
 class Post(models.Model):
     title = models.CharField(max_length=75)
     description = models.CharField(max_length=256)
-    text = models.TextField(max_length=1040, null=True, blank=True)
+    text = models.TextField(max_length=1040)
     image = models.ImageField(upload_to='image',null=True,blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
-    category = models.CharField(max_length=100)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,null=True,blank=True)
     date = models.DateTimeField(null=True)
     def __str__(self):
         return f'Post: {self.title}'

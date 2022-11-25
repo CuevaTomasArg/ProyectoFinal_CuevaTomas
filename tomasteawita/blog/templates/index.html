@@ -25,30 +25,37 @@
 
             </form>
         </section>
-        <section class="view-post">
+        {% if object_list %}
+        <section class="view-post">    
                 {% for post in object_list %}
-                    <article class="Tcard">
-                        <img src="{{post.image.url}}" alt="">
-                        <div>
-                            <strong>{{post.title}}</strong>
-                            <p>
-                                {{post.description}}
-                            </p>
-                            <p>
-                                <span>By: </span><a href="">{{post.user}}</a>
-                            </p>
-                        </div>
-                        <button>
-                            <a href="{% url 'DetailPost' post.id %}">Leer articulo</a> 
-                        </button>
-                        <button>
-                            <a href="{% url 'DeletePost' post.id %}">Eliminar</a> 
-                        </button>
-                        <button>
-                            <a href="{% url 'EditPost' post.id %}">Editar</a> 
-                        </button>
-                    </article>
-                {% endfor %}
-        </section>
+                        <article class="Tcard">
+                            <img src="{{post.image.url}}" alt="">
+                            <div>
+                                <strong>{{post.title}}</strong>
+                                <p>
+                                    {{post.description}}
+                                </p>
+                                <p>
+                                    <span>By: </span><a href="">{{post.user}}</a>
+                                </p>
+                            </div>
+                            <button>
+                                <a href="{% url 'DetailPost' post.id %}">Leer articulo</a> 
+                            </button>
+                            <button>
+                                <a href="{% url 'DeletePost' post.id %}">Eliminar</a> 
+                            </button>
+                            <button>
+                                <a href="{% url 'EditPost' post.id %}">Editar</a> 
+                            </button>
+                        </article>
+                    {% endfor %}
+                </section>
+                    {% else %}
+                    <section style="text-align: center;">
+                        <p style="margin:32px auto; width:100%; text-align: center;">No hay posteos hechos por los usuarios</p>
+                    </section>      
+            {% endif %}
+            
     </main>
 {% endblock  %}

@@ -19,7 +19,6 @@ urlpatterns = [
     path('search/', search, name="search"),
     path('uploadPost/', upload_post, name="upload post"),
     path('valid/', post_valid, name="post_valid"),
-    path('singin/', sing_in, name="sing in"),
     path('editUser/',edit_user, name="edit user"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

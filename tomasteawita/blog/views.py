@@ -46,19 +46,6 @@ def upload_post(request):
         form = Post_post_form()
     return render(request, 'uploadPost.html',{'form': form})
 
-def sing_in(request):
-    if request.method == 'POST':
-        form = Post_user_form(data = request.POST, files= request.FILES)
-        if form.is_valid():
-            form_cleaned = form.cleaned_data
-            user = Avatar(perfil_image = form_cleaned['perfil_image'],perfil_description = form_cleaned['perfil_description'],developer_type = form_cleaned['developer_type'])
-            user.save()
-            return render(request,'postValid.html')
-    else:
-        form = Post_user_form()
-    return render(request, 'singin.html',{'form': form})
-
-
 def post_valid(request):
     return render(request, 'postValid.html')
 
@@ -114,7 +101,7 @@ class UpdatePost(CreateView):
 
 class SingUp(CreateView):
     form_class = SingUpForm
-    success_url = reverse_lazy('index')
+    success_url = '/'
     template_name = 'singup.html'
 
 class AdminLoginView(LoginView):

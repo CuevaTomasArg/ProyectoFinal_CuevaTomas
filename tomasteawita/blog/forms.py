@@ -28,6 +28,9 @@ class SingUpForm(UserCreationForm):
             'password1',
             'password2',
         ]
+        help_texts = {k:'' for k in fields}
+
+
 class UserEditForm(UserCreationForm):
     class Meta:
         model = User

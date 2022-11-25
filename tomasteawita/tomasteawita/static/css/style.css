@@ -264,7 +264,7 @@ header nav > ul li a button:active {
   position: relative;
   height: 600px;
   margin-top: 0;
-  background: linear-gradient(#16496f, transparent);
+  background: #16496f;
 }
 .index .presentation div:first-child {
   position: absolute;
@@ -604,6 +604,16 @@ footer div p {
   background-color: #A8C2DC;
   color: #1A5784;
   border: 1px solid #A8C2DC;
+}
+
+.logout {
+  text-align: center;
+}
+.logout h1 {
+  margin: 256px auto 32px auto;
+}
+.logout p {
+  font-size: 1.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */

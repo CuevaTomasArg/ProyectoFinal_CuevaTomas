@@ -6,35 +6,53 @@
 <script defer src="{% static 'js/main.js' %}"></script>
 {% endblock  %}
 {% block main %}
-<main>
+<main class="detailPost">
     <section>
         <img src="{{post.image.url}}" alt="">
     </section>
-    
     <section>
         <aside>
+        {% if avatar%}
+            <img src="{{avatar.perfil_image.url}}" alt="">
+        {% else %}
+            <img src="{% static 'sources/images/perfil_image-_predeterm.webp'%}" alt="">
+        {% endif %}
             <div>
-                {{post.user.username}}
+                <a href="{% url 'DetailUser' post.user.id%}">{{post.user.username}}</a>
             </div>
+        {% if avatar %}
+            <p>{{avatar.perfil_description}}</p>
+        {% endif %}
+            <a href="{% url 'DetailUser' post.user.id%}">{{post.user.username}}</a>
         </aside> 
         <article>
-            <!-- <p>Descripciond dle posteo</p> -->
-            <!-- <p>Texto del posteo</p> -->
+            <h1>{{post.description}}</h1>
+            <p>{{post.text}}</p>
             <nav>
-                <!-- <span>By:</span><a href=""> Aca va el usuario con la url que lo envia hasta el avatar de ese usuario</a> -->
+                <span>By:</span><a href="{% url 'DetailUser' post.user.id%}"><span>Ver publicaciones de</span>{{post.user.username}} </a> 
             </nav>
         </article>
-    <form action="" method="post"> {% csrf_token %}
-        {{form.as_p}}
-    </form>
+    </section>
+    <section>
+        <h2>Escribir un comentario</h2>
+        <form method="post"> {% csrf_token %}
+            {{form.as_p}}
+        </form>
+        <article>
+            {% if coments %}
+                {% for coment in coments %}
+                    <div>
+                        {{coment.text}}
+                        <nav>
+                            <span>De</span><a href="{% url 'DetailUser' coment.user.id%}">{{coment.user.username}}</a>
+                        </nav>
+                </div>
+                {% endfor %}    
+            {% else %}
+            <p>No hay comentarios</p>
+            {% endif %}
+        </article>
     </section>
 
 </main>
-
-
-
-{% comment %} Aqui va el contenido principal de la pagina que en este caso al ser una vista detallada de un post.titlel
-lo que va a estar aca va a aser el post del detalle osea el posteo del post me entendes pibe o hablo en chino? la re cajeta de tu mamasita bebe uwu
-tue eres mi veve mi cecito fui fui {% endcomment %}
-
 {% endblock  %}

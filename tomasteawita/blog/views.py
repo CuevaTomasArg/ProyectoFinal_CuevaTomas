@@ -74,11 +74,39 @@ def edit_user(request):
 #Me falta hacer un monton de esta vista de detalle de los post con los formularios pero se va a poder.
 #Aun me falta hacer la vista del usuario osea del avatar y crear el avatar a travez del usuario
 #Y que se pueda ver el usuario a tracez de los post
+def detail_user(request,user_id):
+    user = User.objects.get(id=user_id)
+    posts = Post.objects.filter(user_id = user_id)
+    try:
+        avatar = Avatar.objects.get(user=user)
+        context = {'user':user,'posts':posts,'avatar':avatar} 
+    except:
+        context = {'user':user,'posts':posts}
+    return render(request,'detailUser.html',context=context)
 
-def detail_post(request,id_post):
-    post = Post.objects.get(id=id_post)
+def detail_post(request,post_id):
+    post = Post.objects.get(id=post_id)
+    context = {'post':post}
+    try:
+        coments = Comentario.objects.filter(post_id=post_id)
+        context['coments'] = coments
+    except:
+        pass
     if request.method == 'POST':
-        coment_form = ComentForm(initial={'user':request.user.pk,'post':id_post},data = request.POST, files= request.FILES)
+        coment_form = ComentForm(initial={'user':request.user.pk,'post':post_id},data = request.POST, files= request.FILES)
+        if coment_form.is_valid:
+            coment_form_clean = coment_form.cleaned_data
+            coment_clean = Comentario(text= coment_form_clean['text'])
+            coment_clean.save()
+        return render(request, 'detail_post.html',context=context)
+    else:
+        coment_form = ComentForm(initial={'user':request.user.pk,'post':post_id})
+    try:
+        avatar = Avatar.objects.get(user_id=post.user.id)
+        context['avatar'] = avatar
+    except:
+        pass
+    return render(request, 'detailPost.html',context = context)
     
 
 class Index(LoginRequiredMixin,ListView):
@@ -87,10 +115,10 @@ class Index(LoginRequiredMixin,ListView):
 
 
 
-class detail_post(DetailView,CreateView):
-    model = Post
-    form_class = ComentForm
-    template_name = 'detailPost.html'
+# class detail_post(DetailView,CreateView):
+#     model = Post
+#     form_class = ComentForm
+#     template_name = 'detailPost.html'
     
 class delete_post(DeleteView):
     model = Post

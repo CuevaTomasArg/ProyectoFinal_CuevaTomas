@@ -9,7 +9,7 @@ class Post_user_form(forms.Form):
     
 
 class ComentForm(forms.Form):
-    text = forms.TextInput()
+    text = forms.CharField(max_length=256)
     user = forms.ModelChoiceField(queryset=User.objects.all())
     post = forms.ModelChoiceField(queryset=Post.objects.all())
 

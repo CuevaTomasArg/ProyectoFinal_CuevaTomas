@@ -14,6 +14,7 @@ urlpatterns = [
     path('confirm_delete_post/<pk>',delete_post.as_view(),name="DeletePost"),
     path('edit_post/<pk>',EditPost.as_view(),name="EditPost"),
     path('Update_post/',UpdatePost.as_view(),name="Update Post"),
+    path('DetailProfile',detail_profile,name="DetailProfile"),
     path('SingUp/',SingUp.as_view(),name="SingUp"),
     path('login/',AdminLoginView.as_view(),name="Login"),
     path('logout/',AdminLogoutView.as_view(),name="Logout"),

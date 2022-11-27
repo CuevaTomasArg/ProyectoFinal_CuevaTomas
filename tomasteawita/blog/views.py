@@ -43,7 +43,7 @@ def upload_post(request):
             post_clean.save()
         return render(request,'postValid.html')
     else:
-        form = PostForm(initial={'text':"Aqui va el contenido"})
+        form = PostForm(initial={'text':"Aqui va el contenido",'user': request.user.pk,'date':datetime.now()})
     return render(request, 'uploadPost.html',{'form': form})
 
 def post_valid(request):
@@ -70,10 +70,7 @@ def edit_user(request):
         'user': user
     })
 
-
-#Me falta hacer un monton de esta vista de detalle de los post con los formularios pero se va a poder.
-#Aun me falta hacer la vista del usuario osea del avatar y crear el avatar a travez del usuario
-#Y que se pueda ver el usuario a tracez de los post
+#Este va a ser para ver el usuairio de los posteos
 def detail_user(request,user_id):
     user = User.objects.get(id=user_id)
     posts = Post.objects.filter(user_id = user_id)
@@ -84,28 +81,42 @@ def detail_user(request,user_id):
         context = {'user':user,'posts':posts}
     return render(request,'detailUser.html',context=context)
 
+#Esto va a ser para ver el ususario PROPIO
+def detail_profile(request,user_id):
+    user = User.objects.get(id=user_id)
+    posts = Post.objects.filter(user_id = user_id)
+    try:
+        avatar = Avatar.objects.get(user=user)
+        context = {'user':user,'posts':posts,'avatar':avatar} 
+    except:
+        context = {'user':user,'posts':posts}
+    return render(request,'detailUser.html',context=context)
+
+
 def detail_post(request,post_id):
     post = Post.objects.get(id=post_id)
     context = {'post':post}
+    try:
+        avatar = Avatar.objects.get(user_id=post.user.id)
+        context['avatar'] = avatar
+    except:
+        pass
     try:
         coments = Comentario.objects.filter(post_id=post_id)
         context['coments'] = coments
     except:
         pass
     if request.method == 'POST':
-        coment_form = ComentForm(initial={'user':request.user.pk,'post':post_id},data = request.POST, files= request.FILES)
-        if coment_form.is_valid:
+        coment_form = ComentForm(request.POST)
+        coment_form.user = request.user.pk
+        coment_form.post = post_id
+        if coment_form.is_valid():
             coment_form_clean = coment_form.cleaned_data
-            coment_clean = Comentario(text= coment_form_clean['text'])
+            coment_clean = Comentario(text= coment_form_clean['text'],user = request.user,post =post)
             coment_clean.save()
-        return render(request, 'detail_post.html',context=context)
     else:
         coment_form = ComentForm(initial={'user':request.user.pk,'post':post_id})
-    try:
-        avatar = Avatar.objects.get(user_id=post.user.id)
-        context['avatar'] = avatar
-    except:
-        pass
+        context['form'] = coment_form
     return render(request, 'detailPost.html',context = context)
     
 

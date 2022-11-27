@@ -37,7 +37,16 @@
             }
         }
     }
-    section:last-child{
+    .form-coments{
         text-align: center;
+        form{
+            text-align: center;
+            ul{
+                li:not(:first-child){
+                    display: none;
+                }
+            }
+            
+        }
     }
 }

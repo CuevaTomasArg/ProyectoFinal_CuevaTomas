@@ -16,7 +16,7 @@ class ComentForm(forms.Form):
 class PostForm(forms.Form):
     title = forms.CharField(max_length=75)
     description = forms.CharField(max_length=256)
-    text = forms.TextInput()
+    text = forms.CharField(max_length=1040)
     image = forms.ImageField()
     user = forms.ModelChoiceField(queryset=User.objects.all())
     category = forms.ModelChoiceField(queryset=Category.objects.all())    

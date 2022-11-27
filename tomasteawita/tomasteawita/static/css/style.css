@@ -33,6 +33,10 @@ h1 {
   color: #A8C2DC;
 }
 
+h2 {
+  color: #96b5d5;
+}
+
 ul {
   list-style-type: none;
 }
@@ -549,7 +553,7 @@ footer div p {
 .upload-post section form ul li:nth-child(1) input {
   color: #1A5784;
 }
-.upload-post section form ul li:nth-child(3), .upload-post section form ul li:nth-child(4), .upload-post section form ul li:nth-child(6) {
+.upload-post section form ul li:nth-child(4), .upload-post section form ul li:nth-child(5), .upload-post section form ul li:nth-child(7) {
   display: none;
 }
 .upload-post section form button {
@@ -631,8 +635,14 @@ footer div p {
   width: 80%;
   margin: 24px auto;
 }
-.detailPost section:last-child {
+.detailPost .form-coments {
   text-align: center;
+}
+.detailPost .form-coments form {
+  text-align: center;
+}
+.detailPost .form-coments form ul li:not(:first-child) {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

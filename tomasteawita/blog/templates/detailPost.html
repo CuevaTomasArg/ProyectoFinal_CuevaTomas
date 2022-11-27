@@ -33,10 +33,15 @@
             </nav>
         </article>
     </section>
-    <section>
+    <section class="form-coments">
         <h2>Escribir un comentario</h2>
         <form method="post"> {% csrf_token %}
-            {{form.as_p}}
+            <ul>
+                {{form.as_ul}}
+            </ul>
+            <button type="submit">
+                Comentar
+            </button>
         </form>
         <article>
             {% if coments %}
@@ -49,7 +54,7 @@
                 </div>
                 {% endfor %}    
             {% else %}
-            <p>No hay comentarios</p>
+            <strong>No hay comentarios</strong>
             {% endif %}
         </article>
     </section>

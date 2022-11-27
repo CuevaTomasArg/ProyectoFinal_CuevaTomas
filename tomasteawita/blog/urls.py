@@ -11,6 +11,7 @@ urlpatterns = [
     path('',Index.as_view(),name="index"),
     path('detailPost/<int:post_id>',detail_post,name="DetailPost"),
     path('detailUser/<int:user_id>',detail_user,name="DetailUser"),
+    path('detailUser/',detail_profile,name="DetailProfile"),
     path('confirm_delete_post/<pk>',delete_post.as_view(),name="DeletePost"),
     path('edit_post/<pk>',EditPost.as_view(),name="EditPost"),
     path('Update_post/',UpdatePost.as_view(),name="Update Post"),

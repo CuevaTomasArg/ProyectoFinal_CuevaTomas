@@ -82,9 +82,9 @@ def detail_user(request,user_id):
     return render(request,'detailUser.html',context=context)
 
 #Esto va a ser para ver el ususario PROPIO
-def detail_profile(request,user_id):
-    user = User.objects.get(id=user_id)
-    posts = Post.objects.filter(user_id = user_id)
+def detail_profile(request):
+    user = request.user
+    posts = Post.objects.filter(user_id = user.id)
     try:
         avatar = Avatar.objects.get(user=user)
         context = {'user':user,'posts':posts,'avatar':avatar} 

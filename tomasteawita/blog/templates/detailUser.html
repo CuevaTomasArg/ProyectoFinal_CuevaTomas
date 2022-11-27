@@ -9,18 +9,29 @@
 <main>
     <nav class="navigation">
         <div>
-            <span></span><a href=""></a>
+            <a href="{% url 'index' %}">Index</a><span>/</span> 
+            {% if user.id == request.user.id %}
+                <a href="{% url 'DetailProfile' %}"></a>
+            {% else %}
+                <a href="{% url 'DetailUser' user.id%}"></a>
+            {% endif %}
         </div>
     </nav>
     <section>
         <aside>
-            <article>
-                <!--  Aca va la imagen del usuario -->
-                <!-- <p>Descripcion del Usuario</p> -->
-                <!-- <p>Como se define el usuario</p> -->
-
-            </article>
-        </aside>
+            {% if avatar%}
+                <img src="{{avatar.perfil_image.url}}" alt="">
+            {% else %}
+                <img src="{% static 'sources/images/perfil_image-_predeterm.webp'%}" alt="">
+            {% endif %}
+                <div>
+                    <a href="{% url 'DetailProfile'%}">{{user.username}}</a>
+                </div>
+            {% if avatar %}
+                <p>{{avatar.perfil_description}}</p>
+            {% endif %}
+                <a href="{% url 'DetailProfile'%}">{{user.username}}</a>
+            </aside>
     </section>
     <section>
         <!-- <aside>Aca va toda la descripcion de la persona que hizo el post, lo que se encuenra en el avatar</aside> -->

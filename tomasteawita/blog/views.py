@@ -42,8 +42,52 @@ def upload_post(request):
 def post_valid(request):
     return render(request, 'postValid.html')
 
-def edit_user(request):
+def edit_avatar(request):
     user = request.user
+    try:
+        avatar = Avatar.objects.get(user=user)
+        ok = True
+    except:
+        ok = False
+    if request.method == 'POST':
+        avatar_form = AvatarForm(request.POST)
+        if avatar_form.is_valid():
+            if ok:
+                information = avatar_form.cleaned_data
+                avatar.user = information['user']
+                avatar.perfil_image = information['perfil_image']
+                avatar.perfil_description = information['perfil_description']
+                avatar.developer_type = information['developer_type']
+                avatar.save()
+                return render(request,'index.html',{'user': user})
+            else:
+                information = avatar_form.cleaned_data
+                new_avatar = Avatar(user=information['user'],perfil_image=information['perfil_image'],perfil_description=information['perfil_description'],developer_type=information['developer_type'])
+                new_avatar.save()
+                return render(request,'index.html')
+    else:
+        if ok:
+            avatar_form = AvatarForm(initial={'user':request.user.pk,'perfil_image':avatar.perfil_image,'perfil_description':avatar.perfil_description,'developer_type':avatar.developer_type})
+        else:
+            avatar_form = AvatarForm(initial={'user':request.user.pk})
+    if ok:
+        return render(request,'edit_avatar.html',{
+            'form': avatar_form,
+            'avatar': avatar
+        })
+    else:
+        return render(request,'edit_avatar.html',{
+            'form': avatar_form,
+        })
+
+def create_avatar(request):
+    pass
+# Aca lo que vamos a hacer es que una vista para la creacion del avatar uy otra para la creacion del mismo
+            
+            
+            
+def edit_user(request):
+    user = request.user  
     if request.method == 'POST':
         user_form = UserEditForm(request.POST)
         if user_form.is_valid():
@@ -104,13 +148,6 @@ def detail_post(request,post_id):
 class Index(LoginRequiredMixin,ListView):
     model = Post
     template_name = 'index.html'
-
-
-
-# class detail_post(DetailView,CreateView):
-#     model = Post
-#     form_class = ComentForm
-#     template_name = 'detailPost.html'
     
 class delete_post(DeleteView):
     model = Post

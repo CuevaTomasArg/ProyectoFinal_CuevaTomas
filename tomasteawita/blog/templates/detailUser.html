@@ -23,14 +23,25 @@
                     <a href="{% url 'DetailUser' user.id%}">{{user.username}}</a>
                 </div>
             {% if avatar %}
-                <p>{{avatar.perfil_description}}</p>
+               <p>{{avatar.perfil_description}}</p>
             {% endif %}
                 <a href="{% url 'DetailUser' user.id%}">{{user.username}}</a>
             </aside>
             <div>
-                <a href="{% url 'upload post' %}">
-                    <button><span>+</span>Subir un post</button>
-                </a>
+               {% if user.id == request.user.id %}
+                    <a href="{% url 'upload post' %}">
+                        <button><span>+</span>Subir un post</button>
+                    </a>
+                    {% if 'avatar' %}
+                        <a href="{% url 'edit avatar' %}">
+                            <button><span>+</span>Editar avatar</button>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'create avatar' %}">
+                            <button><span>+</span>Crear avatar</button>
+                        </a>
+                    {% endif %}
+               {% endif %}
                 {% for post in posts %}
                     <article class="Tcard">
                         <img src="{{post.image.url}}" alt="">

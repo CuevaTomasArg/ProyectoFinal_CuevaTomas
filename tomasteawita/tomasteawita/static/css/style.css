@@ -647,6 +647,9 @@ footer div p {
 .detail-user section div .Tcard {
   width: 875px;
 }
+.detail-user section div .Tcard img {
+  width: 80%;
+}
 
 .user-detail-card {
   text-align: center;

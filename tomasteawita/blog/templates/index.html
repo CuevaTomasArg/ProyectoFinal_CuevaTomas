@@ -36,7 +36,7 @@
                                     {{post.description}}
                                 </p>
                                 <p>
-                                    <span>By: </span><a href="">{{post.user}}</a>
+                                    <span>By: </span><a href="{% url 'DetailUser' post.user.id %}">{{post.user}}</a>
                                 </p>
                             </div>
                             <button>

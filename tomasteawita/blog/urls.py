@@ -1,11 +1,7 @@
 from django.conf import settings
-from django.views.static import serve
-from django.urls import path, re_path
+from django.urls import path
 from .views import *
 from django.conf.urls.static import static
-# from django.views.static import serve
-# from django.conf.urls.static import static
-
 
 urlpatterns = [
     path('',Index.as_view(),name="index"),
@@ -21,10 +17,5 @@ urlpatterns = [
     path('uploadPost/', upload_post, name="upload post"),
     path('valid/', post_valid, name="post_valid"),
     path('editUser/',edit_user, name="edit user"),
+    path('editAvatar/',edit_avatar, name='edit avatar')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# urlpatterns += [
-#     re_path(r'^media/(?P<path>.*)$',serve,{
-#         'document_root': settings.MEDIA_ROOT,
-#     })
-# ]

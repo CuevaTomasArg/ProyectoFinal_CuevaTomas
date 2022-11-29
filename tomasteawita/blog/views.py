@@ -8,15 +8,8 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView,UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
-#Los decoradores sirven para vistas  basadas en cñases
 from django.contrib.auth.decorators import login_required
-#los mixins sirven para vistas basadas en classes
 from django.contrib.auth.mixins import LoginRequiredMixin
-
-#Lo que hace este login es que evita que yo pueda acceder a ciertos campos si yo no estoy logeado
-#Pero esto me da un error 404, para corregir esto hay que ir a settings.py a hacer una configuracion para que en vez de que me de error, me envie
-#Al login u otra parte de la pagina. Sigue el omentario en el settings.py ->
-
 
 @login_required
 
@@ -39,7 +32,7 @@ def upload_post(request):
         post = PostForm(initial={'user': request.user.pk,'date':datetime.now()},data = request.POST, files= request.FILES)
         if post.is_valid():
             post_cleaned = post.cleaned_data
-            post_clean = Post(title = post_cleaned['title'],description = post_cleaned['description'],text = post_cleaned['text'],image = post_cleaned['image'],category = post_cleaned['category'])
+            post_clean = Post(user=post_cleaned['user'],date=post_cleaned['date'],title = post_cleaned['title'],description = post_cleaned['description'],text = post_cleaned['text'],image = post_cleaned['image'],category = post_cleaned['category'])
             post_clean.save()
         return render(request,'postValid.html')
     else:
@@ -70,7 +63,7 @@ def edit_user(request):
         'user': user
     })
 
-#Este va a ser para ver el usuairio de los posteos
+
 def detail_user(request,user_id):
     user = User.objects.get(id=user_id)
     posts = Post.objects.filter(user_id = user_id)
@@ -80,18 +73,6 @@ def detail_user(request,user_id):
     except:
         context = {'user':user,'posts':posts}
     return render(request,'detailUser.html',context=context)
-
-#Esto va a ser para ver el ususario PROPIO
-def detail_profile(request):
-    user = request.user
-    posts = Post.objects.filter(user_id = user.id)
-    try:
-        avatar = Avatar.objects.get(user=user)
-        context = {'user':user,'posts':posts,'avatar':avatar} 
-    except:
-        context = {'user':user,'posts':posts}
-    return render(request,'detailUser.html',context=context)
-
 
 def detail_post(request,post_id):
     post = Post.objects.get(id=post_id)

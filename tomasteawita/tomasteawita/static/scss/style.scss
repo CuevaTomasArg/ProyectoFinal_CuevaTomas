@@ -85,4 +85,19 @@ hr{
 @import "main/login";
 @import "main/uploadPost";
 @import "main/logout";
-@import "main/detailPost"
+@import "main/detailPost";
+@import "main/detailUser";
+
+.user-detail-card{
+    text-align: center;
+    background-color: darken($fondo,5%);
+    border-right: 2px solid darken($fondo,30%);
+    width: 100%;
+    img{
+        border-radius: 50%;
+        height: 256px;
+        width: 256px;
+        margin: 64px auto;
+        object-fit: cover;
+    }
+}

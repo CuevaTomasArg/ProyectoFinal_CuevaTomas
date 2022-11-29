@@ -13,19 +13,6 @@
         justify-items: stretch;
         align-items: flex-start;
         text-align: center;
-        aside{
-            text-align: center;
-            background-color: darken($fondo,5%);
-            border-right: 2px solid darken($fondo,30%);
-            width: 100%;
-            img{
-                border-radius: 50%;
-                height: 256px;
-                width: 256px;
-                margin: 64px auto;
-                object-fit: cover;
-            }
-        }
         article{
             text-align: center;
             width: 90%;

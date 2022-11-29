@@ -2,7 +2,6 @@ header{
     height: 116px;
     background:linear-gradient(darken($fondo-offcanvas, 5%),$fondo-offcanvas ) ;
     nav{
-        // background-color: lighten($fondo, 3%);
         height: 98px;
         display: flex;
         flex-direction: row;
@@ -10,14 +9,12 @@ header{
         align-items: center;
         padding: 24px;
         >a{
-            // grid-area: img;
             img{
                 height:72px;
                 margin: auto 72px;
            }
         }
         >ul{
-            // grid-area: container1;
             display: flex;
             flex-direction: row;
             align-items: center;

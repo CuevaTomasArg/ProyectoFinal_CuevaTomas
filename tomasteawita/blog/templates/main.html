@@ -10,7 +10,7 @@
     <a href="{% url 'Logout' %}">
         <button>Cerrar sesion</button>
     </a>
-    <a href="{% url 'DetailProfile' %}">
+    <a href="{% url 'DetailUser' request.user.id %}">
         <button>Perfil</button>
     </a> 
 {% endblock  %}

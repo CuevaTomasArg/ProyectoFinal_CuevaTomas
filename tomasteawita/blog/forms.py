@@ -7,6 +7,11 @@ class Post_user_form(forms.Form):
     perfil_description = forms.CharField(max_length=1024)
     developer_type = forms.CharField(max_length=65)
     
+class AvatarForm(forms.Form):
+    user = forms.ModelChoiceField(queryset=User.objects.all())
+    perfil_image = forms.ImageField()
+    perfil_description = forms.CharField(max_length=256)
+    developer_type = forms.CharField(max_length=65)
 
 class ComentForm(forms.Form):
     text = forms.CharField(max_length=256)

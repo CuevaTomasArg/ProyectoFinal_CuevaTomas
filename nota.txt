@@ -9,3 +9,6 @@ Hay que hacer el foreingkey en el usuario
 
 El usuario apenas entra ya va al login, ahora hace falta agregar un boton
 que si no tiene usuario vaya a registrarse
+##############################################################
+###Tengo que ponerle estilos a la parte de editar el posteo###
+##############################################################

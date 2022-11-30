@@ -17,5 +17,6 @@ urlpatterns = [
     path('uploadPost/', upload_post, name="upload post"),
     path('valid/', post_valid, name="post_valid"),
     path('editUser/',edit_user, name="edit user"),
-    path('editAvatar/',edit_avatar, name='edit avatar')
+    path('editAvatar/',edit_avatar, name='edit avatar'),
+    path('createAvatar/',create_avatar, name='create avatar')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block main %}
-    <form action="post" enctype="multipart/form-data">{% csrf_token %}
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
         {{form.as_ul}}
         <button type="submit">Actualizar</button>
     </form>
@@ -10,5 +10,5 @@
 
 
 
-{% endblock main %}
+{% endblock main %}ggg
 

@@ -44,44 +44,35 @@ def post_valid(request):
 
 def edit_avatar(request):
     user = request.user
-    try:
-        avatar = Avatar.objects.get(user=user)
-        ok = True
-    except:
-        ok = False
+    avatar = Avatar.objects.get(user=user)
     if request.method == 'POST':
-        avatar_form = AvatarForm(request.POST)
+        avatar_form  = AvatarForm(data = request.POST, files= request.FILES)
         if avatar_form.is_valid():
-            if ok:
-                information = avatar_form.cleaned_data
-                avatar.user = information['user']
-                avatar.perfil_image = information['perfil_image']
-                avatar.perfil_description = information['perfil_description']
-                avatar.developer_type = information['developer_type']
-                avatar.save()
-                return render(request,'index.html',{'user': user})
-            else:
-                information = avatar_form.cleaned_data
-                new_avatar = Avatar(user=information['user'],perfil_image=information['perfil_image'],perfil_description=information['perfil_description'],developer_type=information['developer_type'])
-                new_avatar.save()
-                return render(request,'index.html')
+            information = avatar_form.cleaned_data
+            avatar.user = information['user']
+            avatar.perfil_image = information['perfil_image']
+            avatar.perfil_description = information['perfil_description']
+            avatar.developer_type = information['developer_type']
+            avatar.save()
+            return detail_user(request=request,user_id=request.user.id)
     else:
-        if ok:
-            avatar_form = AvatarForm(initial={'user':request.user.pk,'perfil_image':avatar.perfil_image,'perfil_description':avatar.perfil_description,'developer_type':avatar.developer_type})
-        else:
-            avatar_form = AvatarForm(initial={'user':request.user.pk})
-    if ok:
-        return render(request,'edit_avatar.html',{
-            'form': avatar_form,
-            'avatar': avatar
-        })
-    else:
-        return render(request,'edit_avatar.html',{
-            'form': avatar_form,
-        })
+        avatar_form = AvatarForm(initial={'user':request.user.pk,'perfil_image':avatar.perfil_image,'perfil_description':avatar.perfil_description,'developer_type':avatar.developer_type})
+    return render(request,'avatar.html',{'form': avatar_form})
 
 def create_avatar(request):
-    pass
+    if request.method == 'POST':
+        avatar_form  = AvatarForm(data = request.POST, files= request.FILES)
+        if avatar_form.is_valid():
+            information = avatar_form.cleaned_data
+            new_avatar = Avatar(user=information['user'],perfil_image=information['perfil_image'],perfil_description=information['perfil_description'],developer_type=information['developer_type'])
+            new_avatar.save()
+            return detail_user(request=request,user_id=request.user.id)
+    else:
+        avatar_form = AvatarForm(initial={'user':request.user.pk})
+    return render(request,'avatar.html',{'form': avatar_form})
+            
+            
+    
 # Aca lo que vamos a hacer es que una vista para la creacion del avatar uy otra para la creacion del mismo
             
             

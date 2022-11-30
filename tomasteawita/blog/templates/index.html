@@ -42,12 +42,14 @@
                             <button>
                                 <a href="{% url 'DetailPost' post.id %}">Leer articulo</a> 
                             </button>
-                            <button>
-                                <a href="{% url 'DeletePost' post.id %}">Eliminar</a> 
-                            </button>
-                            <button>
-                                <a href="{% url 'EditPost' post.id %}">Editar</a> 
-                            </button>
+                            {% if post.user.id == request.user.id %}
+                                <button>
+                                    <a href="{% url 'DeletePost' post.id %}">Eliminar</a> 
+                                </button>
+                                <button>
+                                    <a href="{% url 'EditPost' post.id %}">Editar</a> 
+                                </button>
+                            {% endif %}
                         </article>
                     {% endfor %}
                 </section>

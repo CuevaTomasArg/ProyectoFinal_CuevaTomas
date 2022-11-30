@@ -1,12 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .forms import * 
 from .models import *
 from datetime import datetime
 from django.views.generic import ListView 
-from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView,UpdateView
-from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -70,11 +67,6 @@ def create_avatar(request):
     else:
         avatar_form = AvatarForm(initial={'user':request.user.pk})
     return render(request,'avatar.html',{'form': avatar_form})
-            
-            
-    
-# Aca lo que vamos a hacer es que una vista para la creacion del avatar uy otra para la creacion del mismo
-            
             
             
 def edit_user(request):

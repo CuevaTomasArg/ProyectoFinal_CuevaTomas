@@ -1,0 +1,43 @@
+.delete{
+    height: 100vh;
+    form{
+        position: absolute;
+        top: 40%;
+        left: 25%;
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        'h1 h1'
+        'button1 button2';
+        justify-items: center;
+        h1{
+            grid-area: h1;
+        }
+        button{
+            width: 128px;
+            height: 64px;
+            margin-top: 32px;
+            border-radius: 32px;
+            font-size: 1rem;
+            &:first-child{
+                grid-area: button1;
+            }
+            &:last-child{
+                grid-area: button2;
+            }
+        }
+        .cancel{
+            border: 1px solid nth($colores, 1);
+            // background-color: $fondo;
+            background-color: lighten($fondo, 3%);
+            color: nth($colores, 1);
+        }
+        .delete{
+            border: 1px solid nth($colores, 1);
+            background-color: nth($colores, 1 );
+            color: lighten($fondo, 3%);
+        }
+    }
+}

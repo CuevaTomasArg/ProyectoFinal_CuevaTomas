@@ -1,6 +1,27 @@
-<form method="post">{% csrf_token%}
-    {{form.as_ul}}
-    <button type="submit">
-        Editar
-    </button>
-</form>
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}Editar post{% endblock %}
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script defer src="{% static 'js/main.js' %}"></script>
+<script defer src="{% static 'js/preViewImage.js' %}"></script>
+{% endblock  %}
+{% block main %}
+    <main class="edit-post">
+        <section class="preview">
+            <img id="imagePreView">
+        </section>
+        <section>
+            <button class="selectImageButton" id="selectImageBtn" onClick="document.getElementById('id_image').click();">
+                <i class="bi bi-card-image"></i>
+            </button>
+            <form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+                <ul >
+                    {{form.as_ul}}
+                </ul>
+                <button type="submit" value="Up">Subir</button>
+            </form>
+        </section>
+        
+    </main>
+{% endblock %}

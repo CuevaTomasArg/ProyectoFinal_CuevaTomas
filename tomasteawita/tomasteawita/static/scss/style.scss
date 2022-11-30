@@ -87,7 +87,8 @@ hr{
 @import "main/logout";
 @import "main/detailPost";
 @import "main/detailUser";
-
+@import "main/delete";
+@import "main/editPost";
 .user-detail-card{
     text-align: center;
     background-color: darken($fondo,5%);

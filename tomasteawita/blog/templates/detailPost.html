@@ -43,20 +43,22 @@
                 Comentar
             </button>
         </form>
-        <article>
-            {% if coments %}
-                {% for coment in coments %}
+        <h2>Comentarios</h2>
+        {% if coments %}    
+            {% for coment in coments %}    
+                <article class="coment-card">
                     <div>
                         {{coment.text}}
                         <nav>
-                            <span>De</span><a href="{% url 'DetailUser' coment.user.id%}">{{coment.user.username}}</a>
+                            <span>De: </span><a href="{% url 'DetailUser' coment.user.id%}">{{coment.user.username}}</a>
                         </nav>
-                </div>
+                    </div>
+                </article>
                 {% endfor %}    
             {% else %}
             <strong>No hay comentarios</strong>
             {% endif %}
-        </article>
+        
     </section>
 
 </main>

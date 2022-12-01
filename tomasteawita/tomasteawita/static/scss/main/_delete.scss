@@ -30,7 +30,6 @@
         }
         .cancel{
             border: 1px solid nth($colores, 1);
-            // background-color: $fondo;
             background-color: lighten($fondo, 3%);
             color: nth($colores, 1);
         }

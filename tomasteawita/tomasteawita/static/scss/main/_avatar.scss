@@ -1,0 +1,25 @@
+.avatar-main-form{
+    .avatar-form{
+        text-align: center;
+        ul{
+            text-align: start;
+            width: 25%;
+            margin: 64px auto;
+            li{
+                margin: 24px auto;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                &:first-child{
+                    display: none;
+                }
+            }
+        }
+        button{
+            @extend %button-empty;
+            padding: 4px 8px;
+
+        }
+    }
+}

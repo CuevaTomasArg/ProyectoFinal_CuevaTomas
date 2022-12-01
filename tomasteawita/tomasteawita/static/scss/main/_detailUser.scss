@@ -8,10 +8,14 @@
         text-align: center;;
         div{
             >a{
-                button{
-                    background-color: lighten($fondo-offcanvas ,5%);
-                    color:dakren($fondo,10%)
+                display: inline-block;
+                @extend %button-fille-in;
+                padding: 4px;
+                margin: 16px auto;
+                span{
+                    color: ligthen(nth($colores, 1), 10%);
                 }
+            }
             }
             .Tcard{
                 width: 875px;
@@ -21,4 +25,3 @@
             }
         }
     }
-}

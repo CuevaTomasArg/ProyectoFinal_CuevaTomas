@@ -1,0 +1,41 @@
+%button-empty{
+    border: 1px solid nth($colores, 2);
+    background-color: transparent;
+    color: nth($colores, 2);
+    transition: all .4s;
+    border-radius: 32px;
+    &:hover{
+        background-color: nth($colores, 1);
+        color:lighten($fondo,3%)
+    }
+    &:active{
+        background-color:lighten(nth($colores, 1), 10%);
+        color:lighten(lighten($fondo,3%), 10%)
+    }
+}
+%button-fille-in{
+    display: inline-block;
+    font-family: $font-texto;
+    color: $parrafos;
+    text-decoration:underline;
+    transition: .5s;
+    margin: auto 12px;
+    button{
+        font-size: $f-tiny;
+        background-color: $fondo-botones;
+        border: 1px solid $borde-botones;
+        border-radius: 6px;
+        width: 128px;
+        height: 52px;
+        font-family: $font-H;
+        font-weight: 400;
+        color: $borde-botones;
+        transition: all .3s;
+        &:hover{
+            background-color: lighten($fondo-botones, 10%) ;
+        }
+        &:active{
+            background-color: lighten($fondo-botones, 20%) ;
+        }
+    }
+}

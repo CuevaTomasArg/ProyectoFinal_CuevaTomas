@@ -8,30 +8,19 @@
     box-shadow: 5px 5px 10px 5px lighten(nth($colores,1), 10%);
     -webkit-box-shadow: 5px 5px 10px 5px lighten(nth($colores,1), 10%);
     -moz-box-shadow: 5px 5px 10px 5px lighten(nth($colores,1), 10%);;
-    &.Tcard-carousel{
-        height: auto;
-        display: inline-block;
-        width: min-content;
-        padding: 32px; 
-        width: 100%;
-        padding: 24px;
-        height: 100%;
-        flex: 1 0 100%;
-        img{
-            max-width: 300px;
-            height: 60%;
-            object-fit: cover;
-        }
-        &:not(&:last-child){
-            margin-right: 24px;
-        }
-    }
     img{
         border-radius: 16px;
         margin: 12px auto;
     }
     div{
         width: 90%;
+    }
+    button{
+        @extend %button-empty;
+        width: 128px;
+        height: 36px;
+        padding: 4px;
+        margin: 16px auto;
     }   
 }
 

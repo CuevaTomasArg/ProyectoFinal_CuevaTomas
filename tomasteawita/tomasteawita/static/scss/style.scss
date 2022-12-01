@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,700&display=swap');
 @import "base/vars";
+@import "partials/extends";
 *,
 *:before,
 *:after {
@@ -89,6 +90,7 @@ hr{
 @import "main/detailUser";
 @import "main/delete";
 @import "main/editPost";
+@import "main/avatar";
 .user-detail-card{
     text-align: center;
     background-color: darken($fondo,5%);

@@ -33,7 +33,26 @@
                     display: none;
                 }
             }
+            button{
+                width: 128px;
+                height: 42px;
+                margin-top: 32px;
+                border-radius: 32px;
+                font-size: 1rem;
+                border: 1px solid nth($colores, 1);
+                background-color: lighten($fondo, 3%);
+                color: nth($colores, 1);
+            }
             
         }
     }
+}
+.coment-card{
+    border-radius: 12px;
+    border: 1px solid nth($colores,2);
+    height: max-content;
+    background-color: lighten($fondo, 10%);
+    margin: 32px auto;
+    padding: 24px;
+    width: 70%;
 }

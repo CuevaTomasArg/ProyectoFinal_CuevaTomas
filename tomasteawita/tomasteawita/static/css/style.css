@@ -1,4 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,700&display=swap");
+.avatar-main-form .avatar-form button, .Tcard button {
+  border: 1px solid #96b5d5;
+  background-color: transparent;
+  color: #96b5d5;
+  transition: all 0.4s;
+  border-radius: 32px;
+}
+.avatar-main-form .avatar-form button:hover, .Tcard button:hover {
+  background-color: #A8C2DC;
+  color: #eff3f6;
+}
+.avatar-main-form .avatar-form button:active, .Tcard button:active {
+  background-color: #ccdceb;
+  color: white;
+}
+
+.detail-user section div > a {
+  display: inline-block;
+  font-family: "Roboto", "Quicksand", sans-serif;
+  color: #1A5784;
+  text-decoration: underline;
+  transition: 0.5s;
+  margin: auto 12px;
+}
+.detail-user section div > a button {
+  font-size: 1rem;
+  background-color: #A8C2DC;
+  border: 1px solid #1A5784;
+  border-radius: 6px;
+  width: 128px;
+  height: 52px;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 400;
+  color: #1A5784;
+  transition: all 0.3s;
+}
+.detail-user section div > a button:hover {
+  background-color: #ccdceb;
+}
+.detail-user section div > a button:active {
+  background-color: #f1f5f9;
+}
+
 *,
 *:before,
 *:after {
@@ -420,30 +463,18 @@ footer div p {
   -webkit-box-shadow: 5px 5px 10px 5px #ccdceb;
   -moz-box-shadow: 5px 5px 10px 5px #ccdceb;
 }
-.Tcard.Tcard-carousel {
-  height: auto;
-  display: inline-block;
-  width: min-content;
-  padding: 32px;
-  width: 100%;
-  padding: 24px;
-  height: 100%;
-  flex: 1 0 100%;
-}
-.Tcard.Tcard-carousel img {
-  max-width: 300px;
-  height: 60%;
-  object-fit: cover;
-}
-.Tcard.Tcard-carousel:not(.Tcard.Tcard-carousel:last-child) {
-  margin-right: 24px;
-}
 .Tcard img {
   border-radius: 16px;
   margin: 12px auto;
 }
 .Tcard div {
   width: 90%;
+}
+.Tcard button {
+  width: 128px;
+  height: 36px;
+  padding: 4px;
+  margin: 16px auto;
 }
 
 .login {
@@ -631,6 +662,26 @@ footer div p {
 .detailPost .form-coments form ul li:not(:first-child) {
   display: none;
 }
+.detailPost .form-coments form button {
+  width: 128px;
+  height: 42px;
+  margin-top: 32px;
+  border-radius: 32px;
+  font-size: 1rem;
+  border: 1px solid #A8C2DC;
+  background-color: #eff3f6;
+  color: #A8C2DC;
+}
+
+.coment-card {
+  border-radius: 12px;
+  border: 1px solid #96b5d5;
+  height: max-content;
+  background-color: white;
+  margin: 32px auto;
+  padding: 24px;
+  width: 70%;
+}
 
 .detail-user section {
   display: grid;
@@ -640,14 +691,18 @@ footer div p {
   align-items: flex-start;
   text-align: center;
 }
-.detail-user section div > a button {
-  background-color: #1e6599;
-  color: dakren(#E5EBF1, 10%);
+.detail-user section div > a {
+  display: inline-block;
+  padding: 4px;
+  margin: 16px auto;
 }
-.detail-user section div .Tcard {
+.detail-user section div > a span {
+  color: ligthen(#A8C2DC, 10%);
+}
+.detail-user section .Tcard {
   width: 875px;
 }
-.detail-user section div .Tcard img {
+.detail-user section .Tcard img {
   width: 80%;
 }
 
@@ -750,6 +805,28 @@ footer div p {
   padding: 4px;
   width: 64px;
   border: 1px solid #1A5784;
+}
+
+.avatar-main-form .avatar-form {
+  text-align: center;
+}
+.avatar-main-form .avatar-form ul {
+  text-align: start;
+  width: 25%;
+  margin: 64px auto;
+}
+.avatar-main-form .avatar-form ul li {
+  margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.avatar-main-form .avatar-form ul li:first-child {
+  display: none;
+}
+.avatar-main-form .avatar-form button {
+  padding: 4px 8px;
 }
 
 .user-detail-card {

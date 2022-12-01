@@ -147,9 +147,7 @@ class UpdatePost(CreateView):
     model = Post
     success_url = '/'
     template_name = 'edit_post.html'
-    fields = ['title','description','image','category','avatar']
-    
-    
+    fields = ['title','description','image','category','avatar'] 
 
 class SingUp(CreateView):
     form_class = SingUpForm

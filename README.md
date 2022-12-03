@@ -42,7 +42,7 @@ El formulario GET se utiliza para buscar posteos utilizando el campo de categori
 ## Modelos:
 <ul>
   <li>User | Propio de Django</li>
-  <li>Post/li>
+  <li>Post</li>
   <li>Comentario</li>
   <li>Avatar</li>
 </ul>

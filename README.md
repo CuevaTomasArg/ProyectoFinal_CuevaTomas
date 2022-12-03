@@ -19,6 +19,7 @@ Funcionalidades:
     <ul>
       <li>Iniciar sesion: Formulario POST del modelo Visit.</li>
       <li>Registrarse: Formulario POST del modelo User.</li>
+      <li>Acerca de Tomasteawita: Acerca de mí respectivo del proeycto</li>
     </ul>
   </li>
 </ul>
@@ -29,15 +30,23 @@ Funcionalidades:
     <ul>
       <li>Iniciar sesion: Formulario POST del modelo Visit.</li>
       <li>Registrarse: Formulario POST del modelo User.</li>
-      <li>Subir post: Formulario Post del modelo Post.</li>
-      <li>Ver detalles del usuario</li>
+      <li>Subir post: Formulario POST del modelo Post.</li>
+      <li>Explorar: Formulario GET.</li>
+      <li>Perfil:Ver detalles del usuario, donde se encuentran las funcionalidades de:</li>
+      <li>
+        <ul>
+          <li>
+            Crear un avatar | Editar avatar
+          </li>
+          <li>
+            Subir un Post
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
 
-El formulario GET se utiliza para buscar posteos utilizando el campo de categoria (category).
-->Se ecncuentra en el footer, en el link "explorar"
-->Archivo html "search.html"
 
 ## Modelos:
 <ul>
@@ -45,4 +54,5 @@ El formulario GET se utiliza para buscar posteos utilizando el campo de categori
   <li>Post</li>
   <li>Comentario</li>
   <li>Avatar</li>
+  <li>Category</li>
 </ul>

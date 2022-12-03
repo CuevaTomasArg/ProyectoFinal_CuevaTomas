@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,700&display=swap");
 .avatar-main-form .avatar-form button, .Tcard button {
-  border: 1px solid #96b5d5;
+  border: 1px solid #bacfe3;
   background-color: transparent;
-  color: #96b5d5;
+  color: #bacfe3;
   transition: all 0.4s;
   border-radius: 32px;
 }
 .avatar-main-form .avatar-form button:hover, .Tcard button:hover {
-  background-color: #A8C2DC;
+  background-color: #ccdceb;
   color: #eff3f6;
 }
 .avatar-main-form .avatar-form button:active, .Tcard button:active {
-  background-color: #ccdceb;
+  background-color: #f1f5f9;
   color: white;
 }
 

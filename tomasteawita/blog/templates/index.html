@@ -38,6 +38,7 @@
                                 <p>
                                     <span>By: </span><a href="{% url 'DetailUser' post.user.id %}">{{post.user}}</a>
                                 </p>
+                                <strong>{{post.date}}</strong>
                             </div>
                             <button>
                                 <a href="{% url 'DetailPost' post.id %}">Leer articulo</a> 

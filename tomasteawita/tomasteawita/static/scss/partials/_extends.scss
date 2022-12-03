@@ -1,16 +1,16 @@
 %button-empty{
-    border: 1px solid nth($colores, 2);
+    border: 1px solid lighten(nth($colores, 2),10%);
     background-color: transparent;
-    color: nth($colores, 2);
+    color: lighten(nth($colores, 2),10%);
     transition: all .4s;
     border-radius: 32px;
     &:hover{
-        background-color: nth($colores, 1);
+        background-color: lighten(nth($colores, 1),10%);
         color:lighten($fondo,3%)
     }
     &:active{
-        background-color:lighten(nth($colores, 1), 10%);
-        color:lighten(lighten($fondo,3%), 10%)
+        background-color:lighten(nth($colores, 1), 20%);
+        color:lighten(lighten($fondo,3%), 20%)
     }
 }
 %button-fille-in{

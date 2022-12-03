@@ -32,6 +32,7 @@
             {% if posts %}
                 {% for post in posts %}
                     <article class="Tcard">
+                        <strong>{{post.date}} </strong>
                         <img src="{{post.image.url}}" alt="">
                         <div>
                             <strong>{{post.title}}</strong>
